@@ -4,6 +4,7 @@ import akka.actor.Actor
 import akka.event.slf4j.SLF4JLogging
 import com.gh.helper.dao.UserDAO
 import com.gh.helper.dao.GroceryListDAO
+import com.gh.helper.dao.ItemDAO
 import com.gh.helper.domain._
 import java.text.{ParseException, SimpleDateFormat}
 import java.util.Date
@@ -31,6 +32,7 @@ trait RestService extends HttpService with SLF4JLogging {
 
   val userService = new UserDAO
   val groceryListService = new GroceryListDAO
+  val itemService = new ItemDAO
 
   implicit val executionContext = actorRefFactory.dispatcher
 
@@ -109,9 +111,29 @@ trait RestService extends HttpService with SLF4JLogging {
           get {
             ctx: RequestContext =>
               handleRequest(ctx) {
-                log.debug("Searching for grocerlist: %s" format groceryListId)
+                log.debug("Searching for grocerylist: %s" format groceryListId)
                 groceryListService.get(groceryListId)
               }
+          } ~
+          delete {
+            ctx: RequestContext =>
+              handleRequest(ctx) {
+                log.debug("Deleting grocerylist: %s" format groceryListId)
+                groceryListService.delete(groceryListId)
+              }
+          } ~
+          post {
+            entity(Unmarshaller(MediaTypes.`application/json`) {
+              case httpEntity: HttpEntity =>
+                read[Item](httpEntity.asString(HttpCharsets.`UTF-8`))
+            }) {
+              item: Item =>
+                ctx: RequestContext =>
+                  handleRequest(ctx, StatusCodes.Created) {
+                    log.debug("Creating groceryList: %s".format(item))
+                    itemService.create(groceryListId, item)
+                  }
+            }
           }
       } ~
       path("user") {

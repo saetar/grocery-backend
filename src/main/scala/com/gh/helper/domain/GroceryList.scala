@@ -31,7 +31,9 @@ object GroceryLists extends Table[GroceryList]("lists") {
 
   def * = id.? ~ userId ~ title ~ store ~ details ~ createDate.? <>(GroceryList, GroceryList.unapply _)
 
-  // def user = foreignKey("user_FK", userId, Users)(_.fbId)
+  //def supplier = foreignKey("SUP_FK", supID, suppliers)(_.id)
+
+  def user = foreignKey("user_FK", userId, Users)(_.fbId)
 
   implicit val dateTypeMapper = MappedTypeMapper.base[java.util.Date, java.sql.Timestamp](
   {

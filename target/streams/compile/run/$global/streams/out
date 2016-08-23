@@ -1,7 +1,7 @@
 [0m[[0minfo[0m] [0mRunning com.gh.helper.boot.Boot [0m
 [0m[[0mdebug[0m] [0mWaiting for threads to exit or System.exit to be called.[0m
 [0m[[0mdebug[0m] [0m  Classpath:[0m
-[0m[[0mdebug[0m] [0m	/Users/ryansaeta/Desktop/GroceryBackend/backend/target/scala-2.10/classes[0m
+[0m[[0mdebug[0m] [0m	/Users/ryansaeta/Desktop/grocery-backend/target/scala-2.10/classes[0m
 [0m[[0mdebug[0m] [0m	/Users/ryansaeta/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.10.2.jar[0m
 [0m[[0mdebug[0m] [0m	/Users/ryansaeta/.ivy2/cache/io.spray/spray-can/jars/spray-can-1.1-M8.jar[0m
 [0m[[0mdebug[0m] [0m	/Users/ryansaeta/.ivy2/cache/io.spray/spray-io/jars/spray-io-1.1-M8.jar[0m
@@ -28,10 +28,6 @@
 [0m[[0mdebug[0m] [0m	/Users/ryansaeta/.ivy2/cache/org.slf4j/slf4j-api/jars/slf4j-api-1.7.5.jar[0m
 [0m[[0mdebug[0m] [0mWaiting for thread run-main-0 to terminate.[0m
 [0m[[0mdebug[0m] [0m	Thread run-main-0 exited.[0m
-[0m[[0mdebug[0m] [0mWaiting for thread rest-service-example-akka.actor.default-dispatcher-3 to terminate.[0m
-[0m[[0mdebug[0m] [0m	Thread rest-service-example-akka.actor.default-dispatcher-3 exited.[0m
-[0m[[0mdebug[0m] [0mWaiting for thread rest-service-example-akka.actor.default-dispatcher-4 to terminate.[0m
-[0m[[0mdebug[0m] [0m	Thread rest-service-example-akka.actor.default-dispatcher-4 exited.[0m
-[0m[[0mdebug[0m] [0mWaiting for thread rest-service-example-akka.actor.default-dispatcher-2 to terminate.[0m
-[0m[[0mdebug[0m] [0m	Thread rest-service-example-akka.actor.default-dispatcher-2 exited.[0m
+[0m[[0mdebug[0m] [0mWaiting for thread rest-service-example-akka.actor.default-dispatcher-5 to terminate.[0m
+[0m[[0mdebug[0m] [0m	Thread rest-service-example-akka.actor.default-dispatcher-5 exited.[0m
 [0m[[0mdebug[0m] [0mWaiting for thread rest-service-example-scheduler-1 to terminate.[0m

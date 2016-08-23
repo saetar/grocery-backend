@@ -93,6 +93,7 @@ class UserDAO extends Configuration {
         Left(databaseError(e))
     }
   }
+  
 
   /**
    * Retrieves specific customer from database.
@@ -115,40 +116,6 @@ class UserDAO extends Configuration {
         Left(databaseError(e))
     }
   }
-
-  
-
-  /**
-   * Retrieves list of customers with specified parameters from database.
-   *
-   * @param params search parameters
-   * @return list of customers that match given parameters
-   */
-  // def search(params: CustomerSearchParameters): Either[Failure, List[Customer]] = {
-  //   implicit val typeMapper = Customers.dateTypeMapper
-
-  //   try {
-  //     db.withSession {
-  //       val query = for {
-  //         customer <- Customers if {
-  //         Seq(
-  //           params.firstName.map(customer.firstName is _),
-  //           params.lastName.map(customer.lastName is _),
-  //           params.birthday.map(customer.birthday is _)
-  //         ).flatten match {
-  //           case Nil => ConstColumn.TRUE
-  //           case seq => seq.reduce(_ && _)
-  //         }
-  //       }
-  //       } yield customer
-
-  //       Right(query.run.toList)
-  //     }
-  //   } catch {
-  //     case e: SQLException =>
-  //       Left(databaseError(e))
-  //   }
-  // }
 
   /**
    * Produce database error description.

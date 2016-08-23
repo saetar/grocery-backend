@@ -25,6 +25,8 @@ class GroceryListDAO extends Configuration {
     }
   }
 
+  private val itemService = new ItemDAO
+
   /**
    * Saves groceryList entity into database.
    *
@@ -111,12 +113,19 @@ class GroceryListDAO extends Configuration {
    * @param id id of the customer to retrieve
    * @return customer entity with specified id
    */
-  def get(id: Long): Either[Failure, GroceryList] = {
+  def get(id: Long): Either[Failure, (GroceryList, List[Item])] = {
     try {
       db.withSession {
         GroceryLists.findById(id).firstOption match {
           case Some(groceryList: GroceryList) =>
-            Right(groceryList)
+            // Right(groceryList)
+            val items = itemService.getListItems(id)
+            items match {
+              case Right(itemses: List[Item]) =>
+                Right((groceryList, itemses))
+              case _ =>
+                Right((groceryList, null))
+            }
           case _ =>
             Left(notFoundError(id))
         }
@@ -126,7 +135,7 @@ class GroceryListDAO extends Configuration {
         Left(databaseError(e))
     }
   }
-
+  
   /**
    * Retrieves list of grocerylists from a particular user id in the database
    *
