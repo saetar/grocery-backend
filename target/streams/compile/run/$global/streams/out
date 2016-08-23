@@ -28,6 +28,10 @@
 [0m[[0mdebug[0m] [0m	/Users/ryansaeta/.ivy2/cache/org.slf4j/slf4j-api/jars/slf4j-api-1.7.5.jar[0m
 [0m[[0mdebug[0m] [0mWaiting for thread run-main-0 to terminate.[0m
 [0m[[0mdebug[0m] [0m	Thread run-main-0 exited.[0m
+[0m[[0mdebug[0m] [0mWaiting for thread rest-service-example-akka.actor.default-dispatcher-4 to terminate.[0m
+[0m[[0mdebug[0m] [0m	Thread rest-service-example-akka.actor.default-dispatcher-4 exited.[0m
 [0m[[0mdebug[0m] [0mWaiting for thread rest-service-example-akka.actor.default-dispatcher-5 to terminate.[0m
 [0m[[0mdebug[0m] [0m	Thread rest-service-example-akka.actor.default-dispatcher-5 exited.[0m
+[0m[[0mdebug[0m] [0mWaiting for thread rest-service-example-akka.actor.default-dispatcher-2 to terminate.[0m
+[0m[[0mdebug[0m] [0m	Thread rest-service-example-akka.actor.default-dispatcher-2 exited.[0m
 [0m[[0mdebug[0m] [0mWaiting for thread rest-service-example-scheduler-1 to terminate.[0m

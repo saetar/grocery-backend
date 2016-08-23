@@ -38,7 +38,7 @@ trait RestService extends HttpService with SLF4JLogging {
 
   implicit val liftJsonFormats = new Formats {
     val dateFormat = new DateFormat {
-      val sdf = new SimpleDateFormat("yyyy-MM-dd")
+      val sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss")
 
       def parse(s: String): Option[Date] = try {
         Some(sdf.parse(s))
@@ -52,7 +52,7 @@ trait RestService extends HttpService with SLF4JLogging {
 
   implicit val string2Date = new FromStringDeserializer[Date] {
     def apply(value: String) = {
-      val sdf = new SimpleDateFormat("yyyy-MM-dd")
+      val sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss")
       try Right(sdf.parse(value))
       catch {
         case e: ParseException => {
