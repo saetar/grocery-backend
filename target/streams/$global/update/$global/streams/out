@@ -7,7 +7,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies for rest#rest_2.10;1.0 [compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->org.scala-lang#scala-library;2.10.2 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving org.scala-lang#scala-library;2.10.2 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@3f35fb2a[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@651d3af3[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-library;2.10.2[0m
 [0m[[0mdebug[0m] [0m	found org.scala-lang#scala-library;2.10.2 in sbt-chain[0m
 [0m[[0mdebug[0m] [0m	[2.10.2] org.scala-lang#scala-library;2.10.2[0m
@@ -245,31 +245,136 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies net.liftweb#lift-json_2.10;2.5.1->com.thoughtworks.paranamer#paranamer;2.4.1 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies net.liftweb#lift-json_2.10;2.5.1->com.thoughtworks.paranamer#paranamer;2.4.1 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->net.liftweb#lift-json_2.10;2.5.1 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.slick#slick_2.10;1.0.1 [compile->default(compile)][0m
-[0m[[0minfo[0m] [0mResolving com.typesafe.slick#slick_2.10;1.0.1 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.typesafe.slick#slick_2.10;1.0.1 {compile=[default(compile)]}[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.typesafe.slick#slick_2.10;1.0.1[0m
-[0m[[0mdebug[0m] [0m	found com.typesafe.slick#slick_2.10;1.0.1 in sbt-chain[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.slick#slick_2.10;1.0.1 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.slick#slick_2.10;1.0.1 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;1.0.1->org.scala-lang#scala-library;2.10.1 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;1.0.1->org.scala-lang#scala-library;2.10.2 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;1.0.1->org.scala-lang#scala-library;2.10.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;1.0.1->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;1.0.1->org.slf4j#slf4j-api;1.6.4 [compile->master(compile)][0m
-[0m[[0minfo[0m] [0mResolving org.slf4j#slf4j-api;1.6.4 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.slf4j#slf4j-api;1.6.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.slf4j#slf4j-api;1.6.4[0m
-[0m[[0mdebug[0m] [0m	found org.slf4j#slf4j-api;1.6.4 in sbt-chain[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;1.0.1->org.slf4j#slf4j-api;1.6.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;1.0.1->org.slf4j#slf4j-api;1.6.4 [compile->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;1.0.1->org.slf4j#slf4j-api;1.6.4 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;1.0.1->org.scala-lang#scala-library;2.10.1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;1.0.1->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;1.0.1->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;1.0.1->org.slf4j#slf4j-api;1.6.4 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;1.0.1->org.slf4j#slf4j-api;1.6.4 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.slick#slick_2.10;1.0.1 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.slick#slick_2.10;3.1.1 [compile->default(compile)][0m
+[0m[[0minfo[0m] [0mResolving com.typesafe.slick#slick_2.10;3.1.1 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.typesafe.slick#slick_2.10;3.1.1 {compile=[default(compile)]}[0m
+[0m[[0minfo[0m] [0mResolving com.typesafe.slick#slick_2.10;3.1.1 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain-delegate: Checking cache for: dependency: com.typesafe.slick#slick_2.10;3.1.1 {compile=[default(compile)]}[0m
+[0m[[0mdebug[0m] [0m		tried /Users/ryansaeta/.ivy2/local/com.typesafe.slick/slick_2.10/3.1.1/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m	local: no ivy file found for com.typesafe.slick#slick_2.10;3.1.1[0m
+[0m[[0mdebug[0m] [0m		tried https://jcenter.bintray.com/com/typesafe/slick/slick_2.10/3.1.1/slick_2.10-3.1.1.pom[0m
+[0m[[0mdebug[0m] [0m	jcenter: found md file for com.typesafe.slick#slick_2.10;3.1.1[0m
+[0m[[0mdebug[0m] [0m		=> https://jcenter.bintray.com/com/typesafe/slick/slick_2.10/3.1.1/slick_2.10-3.1.1.pom (3.1.1)[0m
+[0m[[0mdebug[0m] [0mdownloading https://jcenter.bintray.com/com/typesafe/slick/slick_2.10/3.1.1/slick_2.10-3.1.1.pom ...[0m
+[0m[[0mdebug[0m] [0m	jcenter: downloading https://jcenter.bintray.com/com/typesafe/slick/slick_2.10/3.1.1/slick_2.10-3.1.1.pom[0m
+[0m[[0mdebug[0m] [0m	jcenter: downloading https://jcenter.bintray.com/com/typesafe/slick/slick_2.10/3.1.1/slick_2.10-3.1.1.pom.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for https://jcenter.bintray.com/com/typesafe/slick/slick_2.10/3.1.1/slick_2.10-3.1.1.pom[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] com.typesafe.slick#slick_2.10;3.1.1!slick_2.10.pom(pom.original) (590ms)[0m
+[0m[[0mdebug[0m] [0m		tried /Users/ryansaeta/.ivy2/local/com.typesafe.slick/slick_2.10/3.1.1/bundles/slick_2.10.jar[0m
+[0m[[0mdebug[0m] [0m		tried https://jcenter.bintray.com/com/typesafe/slick/slick_2.10/3.1.1/slick_2.10-3.1.1.jar[0m
+[0m[[0mdebug[0m] [0m	found com.typesafe.slick#slick_2.10;3.1.1 in jcenter[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.slick#slick_2.10;3.1.1 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.slick#slick_2.10;3.1.1 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.scala-lang#scala-library;2.10.5 [compile->master(compile)][0m
+[0m[[0minfo[0m] [0mResolving org.scala-lang#scala-library;2.10.5 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.scala-lang#scala-library;2.10.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-library;2.10.5[0m
+[0m[[0mdebug[0m] [0m	found org.scala-lang#scala-library;2.10.5 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m	[2.10.5] org.scala-lang#scala-library;2.10.5[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.scala-lang#scala-library;2.10.5 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.scala-lang#scala-library;2.10.5 [compile->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.scala-lang#scala-library;2.10.5 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.scala-lang#scala-library;2.10.5 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.scala-lang#scala-library;2.10.5 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.scala-lang#scala-library;2.10.5 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.scala-lang#scala-library;2.10.5 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.scala-lang#scala-library;2.10.5 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.scala-lang#scala-library;2.10.5 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.slf4j#slf4j-api;1.7.10 [compile->master(compile)][0m
+[0m[[0minfo[0m] [0mResolving org.slf4j#slf4j-api;1.7.10 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.slf4j#slf4j-api;1.7.10 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
+[0m[[0minfo[0m] [0mResolving org.slf4j#slf4j-api;1.7.10 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain-delegate: Checking cache for: dependency: org.slf4j#slf4j-api;1.7.10 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0m		tried /Users/ryansaeta/.ivy2/local/org.slf4j/slf4j-api/1.7.10/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m	local: no ivy file found for org.slf4j#slf4j-api;1.7.10[0m
+[0m[[0mdebug[0m] [0m		tried https://jcenter.bintray.com/org/slf4j/slf4j-api/1.7.10/slf4j-api-1.7.10.pom[0m
+[0m[[0mdebug[0m] [0m	jcenter: found md file for org.slf4j#slf4j-api;1.7.10[0m
+[0m[[0mdebug[0m] [0m		=> https://jcenter.bintray.com/org/slf4j/slf4j-api/1.7.10/slf4j-api-1.7.10.pom (1.7.10)[0m
+[0m[[0mdebug[0m] [0mdownloading https://jcenter.bintray.com/org/slf4j/slf4j-api/1.7.10/slf4j-api-1.7.10.pom ...[0m
+[0m[[0mdebug[0m] [0m	jcenter: downloading https://jcenter.bintray.com/org/slf4j/slf4j-api/1.7.10/slf4j-api-1.7.10.pom[0m
+[0m[[0mdebug[0m] [0m	jcenter: downloading https://jcenter.bintray.com/org/slf4j/slf4j-api/1.7.10/slf4j-api-1.7.10.pom.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for https://jcenter.bintray.com/org/slf4j/slf4j-api/1.7.10/slf4j-api-1.7.10.pom[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.slf4j#slf4j-api;1.7.10!slf4j-api.pom(pom.original) (941ms)[0m
+[0m[[0minfo[0m] [0mResolving org.slf4j#slf4j-parent;1.7.10 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.slf4j#slf4j-parent;1.7.10 {}[0m
+[0m[[0minfo[0m] [0mResolving org.slf4j#slf4j-parent;1.7.10 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain-delegate: Checking cache for: dependency: org.slf4j#slf4j-parent;1.7.10 {}[0m
+[0m[[0mdebug[0m] [0m		tried /Users/ryansaeta/.ivy2/local/org.slf4j/slf4j-parent/1.7.10/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m	local: no ivy file found for org.slf4j#slf4j-parent;1.7.10[0m
+[0m[[0mdebug[0m] [0m		tried https://jcenter.bintray.com/org/slf4j/slf4j-parent/1.7.10/slf4j-parent-1.7.10.pom[0m
+[0m[[0mdebug[0m] [0m	jcenter: found md file for org.slf4j#slf4j-parent;1.7.10[0m
+[0m[[0mdebug[0m] [0m		=> https://jcenter.bintray.com/org/slf4j/slf4j-parent/1.7.10/slf4j-parent-1.7.10.pom (1.7.10)[0m
+[0m[[0mdebug[0m] [0mdownloading https://jcenter.bintray.com/org/slf4j/slf4j-parent/1.7.10/slf4j-parent-1.7.10.pom ...[0m
+[0m[[0mdebug[0m] [0m	jcenter: downloading https://jcenter.bintray.com/org/slf4j/slf4j-parent/1.7.10/slf4j-parent-1.7.10.pom[0m
+[0m[[0mdebug[0m] [0m	jcenter: downloading https://jcenter.bintray.com/org/slf4j/slf4j-parent/1.7.10/slf4j-parent-1.7.10.pom.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for https://jcenter.bintray.com/org/slf4j/slf4j-parent/1.7.10/slf4j-parent-1.7.10.pom[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.slf4j#slf4j-parent;1.7.10!slf4j-parent.pom(pom.original) (960ms)[0m
+[0m[[0mdebug[0m] [0m		tried /Users/ryansaeta/.ivy2/local/org.slf4j/slf4j-parent/1.7.10/jars/slf4j-parent.jar[0m
+[0m[[0mdebug[0m] [0m		tried https://jcenter.bintray.com/org/slf4j/slf4j-parent/1.7.10/slf4j-parent-1.7.10.jar[0m
+[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=https://jcenter.bintray.com/org/slf4j/slf4j-parent/1.7.10/slf4j-parent-1.7.10.jar[0m
+[0m[[0mdebug[0m] [0m		tried https://repo1.maven.org/maven2/org/slf4j/slf4j-parent/1.7.10/slf4j-parent-1.7.10.jar[0m
+[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=https://repo1.maven.org/maven2/org/slf4j/slf4j-parent/1.7.10/slf4j-parent-1.7.10.jar[0m
+[0m[[0mdebug[0m] [0m		tried http://repo.spray.io/org/slf4j/slf4j-parent/1.7.10/slf4j-parent-1.7.10.jar[0m
+[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo.spray.io/org/slf4j/slf4j-parent/1.7.10/slf4j-parent-1.7.10.jar[0m
+[0m[[0mdebug[0m] [0m		tried http://repo.typesafe.com/typesafe/releases/org/slf4j/slf4j-parent/1.7.10/slf4j-parent-1.7.10.jar[0m
+[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo.typesafe.com/typesafe/releases/org/slf4j/slf4j-parent/1.7.10/slf4j-parent-1.7.10.jar[0m
+[0m[[0mdebug[0m] [0m		tried /Users/ryansaeta/.ivy2/local/org.slf4j/slf4j-api/1.7.10/jars/slf4j-api.jar[0m
+[0m[[0mdebug[0m] [0m		tried https://jcenter.bintray.com/org/slf4j/slf4j-api/1.7.10/slf4j-api-1.7.10.jar[0m
+[0m[[0mdebug[0m] [0m	found org.slf4j#slf4j-api;1.7.10 in jcenter[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.slf4j#slf4j-api;1.7.10 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.slf4j#slf4j-api;1.7.10 [compile->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.slf4j#slf4j-api;1.7.10 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->com.typesafe#config;1.2.1 [compile->master(compile)][0m
+[0m[[0minfo[0m] [0mResolving com.typesafe#config;1.2.1 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.typesafe#config;1.2.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
+[0m[[0minfo[0m] [0mResolving com.typesafe#config;1.2.1 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain-delegate: Checking cache for: dependency: com.typesafe#config;1.2.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0m		tried /Users/ryansaeta/.ivy2/local/com.typesafe/config/1.2.1/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m	local: no ivy file found for com.typesafe#config;1.2.1[0m
+[0m[[0mdebug[0m] [0m		tried https://jcenter.bintray.com/com/typesafe/config/1.2.1/config-1.2.1.pom[0m
+[0m[[0mdebug[0m] [0m	jcenter: found md file for com.typesafe#config;1.2.1[0m
+[0m[[0mdebug[0m] [0m		=> https://jcenter.bintray.com/com/typesafe/config/1.2.1/config-1.2.1.pom (1.2.1)[0m
+[0m[[0mdebug[0m] [0mdownloading https://jcenter.bintray.com/com/typesafe/config/1.2.1/config-1.2.1.pom ...[0m
+[0m[[0mdebug[0m] [0m	jcenter: downloading https://jcenter.bintray.com/com/typesafe/config/1.2.1/config-1.2.1.pom[0m
+[0m[[0mdebug[0m] [0m	jcenter: downloading https://jcenter.bintray.com/com/typesafe/config/1.2.1/config-1.2.1.pom.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for https://jcenter.bintray.com/com/typesafe/config/1.2.1/config-1.2.1.pom[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] com.typesafe#config;1.2.1!config.pom(pom.original) (334ms)[0m
+[0m[[0mdebug[0m] [0m		tried /Users/ryansaeta/.ivy2/local/com.typesafe/config/1.2.1/bundles/config.jar[0m
+[0m[[0mdebug[0m] [0m		tried https://jcenter.bintray.com/com/typesafe/config/1.2.1/config-1.2.1.jar[0m
+[0m[[0mdebug[0m] [0m	found com.typesafe#config;1.2.1 in jcenter[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->com.typesafe#config;1.2.1 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->com.typesafe#config;1.2.1 [compile->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->com.typesafe#config;1.2.1 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.reactivestreams#reactive-streams;1.0.0 [compile->master(compile)][0m
+[0m[[0minfo[0m] [0mResolving org.reactivestreams#reactive-streams;1.0.0 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.reactivestreams#reactive-streams;1.0.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
+[0m[[0minfo[0m] [0mResolving org.reactivestreams#reactive-streams;1.0.0 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain-delegate: Checking cache for: dependency: org.reactivestreams#reactive-streams;1.0.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0m		tried /Users/ryansaeta/.ivy2/local/org.reactivestreams/reactive-streams/1.0.0/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m	local: no ivy file found for org.reactivestreams#reactive-streams;1.0.0[0m
+[0m[[0mdebug[0m] [0m		tried https://jcenter.bintray.com/org/reactivestreams/reactive-streams/1.0.0/reactive-streams-1.0.0.pom[0m
+[0m[[0mdebug[0m] [0m	jcenter: found md file for org.reactivestreams#reactive-streams;1.0.0[0m
+[0m[[0mdebug[0m] [0m		=> https://jcenter.bintray.com/org/reactivestreams/reactive-streams/1.0.0/reactive-streams-1.0.0.pom (1.0.0)[0m
+[0m[[0mdebug[0m] [0mdownloading https://jcenter.bintray.com/org/reactivestreams/reactive-streams/1.0.0/reactive-streams-1.0.0.pom ...[0m
+[0m[[0mdebug[0m] [0m	jcenter: downloading https://jcenter.bintray.com/org/reactivestreams/reactive-streams/1.0.0/reactive-streams-1.0.0.pom[0m
+[0m[[0mdebug[0m] [0m	jcenter: downloading https://jcenter.bintray.com/org/reactivestreams/reactive-streams/1.0.0/reactive-streams-1.0.0.pom.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for https://jcenter.bintray.com/org/reactivestreams/reactive-streams/1.0.0/reactive-streams-1.0.0.pom[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.reactivestreams#reactive-streams;1.0.0!reactive-streams.pom(pom.original) (385ms)[0m
+[0m[[0mdebug[0m] [0m		tried /Users/ryansaeta/.ivy2/local/org.reactivestreams/reactive-streams/1.0.0/jars/reactive-streams.jar[0m
+[0m[[0mdebug[0m] [0m		tried https://jcenter.bintray.com/org/reactivestreams/reactive-streams/1.0.0/reactive-streams-1.0.0.jar[0m
+[0m[[0mdebug[0m] [0m	found org.reactivestreams#reactive-streams;1.0.0 in jcenter[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.reactivestreams#reactive-streams;1.0.0 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.reactivestreams#reactive-streams;1.0.0 [compile->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.reactivestreams#reactive-streams;1.0.0 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.scala-lang#scala-library;2.10.5 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.scala-lang#scala-library;2.10.5 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.slf4j#slf4j-api;1.7.10 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.slf4j#slf4j-api;1.7.10 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->com.typesafe#config;1.2.1 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->com.typesafe#config;1.2.1 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.reactivestreams#reactive-streams;1.0.0 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.reactivestreams#reactive-streams;1.0.0 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.slick#slick_2.10;3.1.1 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->mysql#mysql-connector-java;5.1.25 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving mysql#mysql-connector-java;5.1.25 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: mysql#mysql-connector-java;5.1.25 {compile=[default(compile)]}[0m
@@ -286,22 +391,19 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.akka#akka-actor_2.10;2.1.4 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.akka#akka-actor_2.10;2.1.4 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->org.scala-lang#scala-library;2.10.1 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->org.scala-lang#scala-library;2.10.2 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->org.scala-lang#scala-library;2.10.5 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->org.scala-lang#scala-library;2.10.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->org.scala-lang#scala-library;2.10.5 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->com.typesafe#config;1.0.0 [compile->master(compile)][0m
-[0m[[0minfo[0m] [0mResolving com.typesafe#config;1.0.0 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.typesafe#config;1.0.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.typesafe#config;1.0.0[0m
-[0m[[0mdebug[0m] [0m	found com.typesafe#config;1.0.0 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->com.typesafe#config;1.2.1 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->com.typesafe#config;1.0.0 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->com.typesafe#config;1.0.0 [compile->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->com.typesafe#config;1.0.0 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->com.typesafe#config;1.2.1 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->org.scala-lang#scala-library;2.10.1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->org.scala-lang#scala-library;2.10.5 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->org.scala-lang#scala-library;2.10.5 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->com.typesafe#config;1.0.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->com.typesafe#config;1.0.0 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->com.typesafe#config;1.2.1 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->com.typesafe#config;1.2.1 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.akka#akka-actor_2.10;2.1.4 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.akka#akka-slf4j_2.10;2.1.4 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving com.typesafe.akka#akka-slf4j_2.10;2.1.4 ...[0m
@@ -315,24 +417,21 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->com.typesafe.akka#akka-actor_2.10;2.1.4 [compile->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->com.typesafe.akka#akka-actor_2.10;2.1.4 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.scala-lang#scala-library;2.10.1 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.scala-lang#scala-library;2.10.2 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.scala-lang#scala-library;2.10.5 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.scala-lang#scala-library;2.10.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.scala-lang#scala-library;2.10.5 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.slf4j#slf4j-api;1.7.2 [compile->master(compile)][0m
-[0m[[0minfo[0m] [0mResolving org.slf4j#slf4j-api;1.7.2 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.slf4j#slf4j-api;1.7.2 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.slf4j#slf4j-api;1.7.2[0m
-[0m[[0mdebug[0m] [0m	found org.slf4j#slf4j-api;1.7.2 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.slf4j#slf4j-api;1.7.10 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.slf4j#slf4j-api;1.7.2 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.slf4j#slf4j-api;1.7.2 [compile->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.slf4j#slf4j-api;1.7.2 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.slf4j#slf4j-api;1.7.10 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->com.typesafe.akka#akka-actor_2.10;2.1.4 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->com.typesafe.akka#akka-actor_2.10;2.1.4 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.scala-lang#scala-library;2.10.1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.scala-lang#scala-library;2.10.5 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.scala-lang#scala-library;2.10.5 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.slf4j#slf4j-api;1.7.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.slf4j#slf4j-api;1.7.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.slf4j#slf4j-api;1.7.10 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.slf4j#slf4j-api;1.7.10 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.akka#akka-slf4j_2.10;2.1.4 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->ch.qos.logback#logback-classic;1.0.13 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving ch.qos.logback#logback-classic;1.0.13 ...[0m
@@ -350,17 +449,14 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.13->ch.qos.logback#logback-core;1.0.13 [compile->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.13->ch.qos.logback#logback-core;1.0.13 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.13->org.slf4j#slf4j-api;1.7.5 [compile->master(compile)][0m
-[0m[[0minfo[0m] [0mResolving org.slf4j#slf4j-api;1.7.5 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.slf4j#slf4j-api;1.7.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)], test=[runtime(*), master(compile)]}[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.slf4j#slf4j-api;1.7.5[0m
-[0m[[0mdebug[0m] [0m	found org.slf4j#slf4j-api;1.7.5 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.13->org.slf4j#slf4j-api;1.7.10 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.13->org.slf4j#slf4j-api;1.7.5 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.13->org.slf4j#slf4j-api;1.7.5 [compile->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.13->org.slf4j#slf4j-api;1.7.5 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.13->org.slf4j#slf4j-api;1.7.10 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.13->ch.qos.logback#logback-core;1.0.13 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.13->ch.qos.logback#logback-core;1.0.13 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.13->org.slf4j#slf4j-api;1.7.5 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.13->org.slf4j#slf4j-api;1.7.5 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.13->org.slf4j#slf4j-api;1.7.10 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.13->org.slf4j#slf4j-api;1.7.10 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->ch.qos.logback#logback-classic;1.0.13 [compile->master][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'runtime'[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for rest#rest_2.10;1.0 [runtime][0m
@@ -520,21 +616,26 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies net.liftweb#lift-json_2.10;2.5.1->com.thoughtworks.paranamer#paranamer;2.4.1 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies net.liftweb#lift-json_2.10;2.5.1->com.thoughtworks.paranamer#paranamer;2.4.1 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->net.liftweb#lift-json_2.10;2.5.1 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.slick#slick_2.10;1.0.1 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.slick#slick_2.10;1.0.1 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.slick#slick_2.10;1.0.1 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;1.0.1->org.scala-lang#scala-library;2.10.1 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;1.0.1->org.scala-lang#scala-library;2.10.2 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;1.0.1->org.scala-lang#scala-library;2.10.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;1.0.1->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;1.0.1->org.slf4j#slf4j-api;1.6.4 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;1.0.1->org.slf4j#slf4j-api;1.6.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;1.0.1->org.scala-lang#scala-library;2.10.1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;1.0.1->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;1.0.1->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;1.0.1->org.slf4j#slf4j-api;1.6.4 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;1.0.1->org.slf4j#slf4j-api;1.6.4 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.slick#slick_2.10;1.0.1 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.slick#slick_2.10;3.1.1 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.slick#slick_2.10;3.1.1 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.slick#slick_2.10;3.1.1 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.scala-lang#scala-library;2.10.5 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.scala-lang#scala-library;2.10.5 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.slf4j#slf4j-api;1.7.10 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.slf4j#slf4j-api;1.7.10 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->com.typesafe#config;1.2.1 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->com.typesafe#config;1.2.1 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.reactivestreams#reactive-streams;1.0.0 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.reactivestreams#reactive-streams;1.0.0 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.scala-lang#scala-library;2.10.5 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.scala-lang#scala-library;2.10.5 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.slf4j#slf4j-api;1.7.10 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.slf4j#slf4j-api;1.7.10 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->com.typesafe#config;1.2.1 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->com.typesafe#config;1.2.1 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.reactivestreams#reactive-streams;1.0.0 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.reactivestreams#reactive-streams;1.0.0 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.slick#slick_2.10;3.1.1 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->mysql#mysql-connector-java;5.1.25 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->mysql#mysql-connector-java;5.1.25 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->mysql#mysql-connector-java;5.1.25 [compile->compile][0m
@@ -543,16 +644,19 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.akka#akka-actor_2.10;2.1.4 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.akka#akka-actor_2.10;2.1.4 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->org.scala-lang#scala-library;2.10.1 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->org.scala-lang#scala-library;2.10.2 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->org.scala-lang#scala-library;2.10.5 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->org.scala-lang#scala-library;2.10.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->org.scala-lang#scala-library;2.10.5 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->com.typesafe#config;1.0.0 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->com.typesafe#config;1.2.1 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->com.typesafe#config;1.0.0 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->com.typesafe#config;1.2.1 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->org.scala-lang#scala-library;2.10.1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->org.scala-lang#scala-library;2.10.5 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->org.scala-lang#scala-library;2.10.5 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->com.typesafe#config;1.0.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->com.typesafe#config;1.0.0 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->com.typesafe#config;1.2.1 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->com.typesafe#config;1.2.1 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.akka#akka-actor_2.10;2.1.4 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.akka#akka-slf4j_2.10;2.1.4 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.akka#akka-slf4j_2.10;2.1.4 [compile->runtime][0m
@@ -560,18 +664,21 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->com.typesafe.akka#akka-actor_2.10;2.1.4 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->com.typesafe.akka#akka-actor_2.10;2.1.4 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.scala-lang#scala-library;2.10.1 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.scala-lang#scala-library;2.10.2 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.scala-lang#scala-library;2.10.5 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.scala-lang#scala-library;2.10.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.scala-lang#scala-library;2.10.5 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.slf4j#slf4j-api;1.7.2 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.slf4j#slf4j-api;1.7.10 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.slf4j#slf4j-api;1.7.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.slf4j#slf4j-api;1.7.10 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->com.typesafe.akka#akka-actor_2.10;2.1.4 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->com.typesafe.akka#akka-actor_2.10;2.1.4 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.scala-lang#scala-library;2.10.1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.scala-lang#scala-library;2.10.5 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.scala-lang#scala-library;2.10.5 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.slf4j#slf4j-api;1.7.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.slf4j#slf4j-api;1.7.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.slf4j#slf4j-api;1.7.10 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.slf4j#slf4j-api;1.7.10 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.akka#akka-slf4j_2.10;2.1.4 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->ch.qos.logback#logback-classic;1.0.13 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->ch.qos.logback#logback-classic;1.0.13 [compile->runtime][0m
@@ -579,11 +686,14 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.13->ch.qos.logback#logback-core;1.0.13 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.13->ch.qos.logback#logback-core;1.0.13 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.13->org.slf4j#slf4j-api;1.7.5 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.13->org.slf4j#slf4j-api;1.7.10 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.13->org.slf4j#slf4j-api;1.7.5 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.13->org.slf4j#slf4j-api;1.7.10 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.13->ch.qos.logback#logback-core;1.0.13 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.13->ch.qos.logback#logback-core;1.0.13 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.13->org.slf4j#slf4j-api;1.7.5 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.13->org.slf4j#slf4j-api;1.7.5 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.13->org.slf4j#slf4j-api;1.7.10 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.13->org.slf4j#slf4j-api;1.7.10 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->ch.qos.logback#logback-classic;1.0.13 [compile->master][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'test'[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for rest#rest_2.10;1.0 [test][0m
@@ -744,21 +854,26 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies net.liftweb#lift-json_2.10;2.5.1->com.thoughtworks.paranamer#paranamer;2.4.1 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies net.liftweb#lift-json_2.10;2.5.1->com.thoughtworks.paranamer#paranamer;2.4.1 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->net.liftweb#lift-json_2.10;2.5.1 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.slick#slick_2.10;1.0.1 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.slick#slick_2.10;1.0.1 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.slick#slick_2.10;1.0.1 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;1.0.1->org.scala-lang#scala-library;2.10.1 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;1.0.1->org.scala-lang#scala-library;2.10.2 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;1.0.1->org.scala-lang#scala-library;2.10.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;1.0.1->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;1.0.1->org.slf4j#slf4j-api;1.6.4 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;1.0.1->org.slf4j#slf4j-api;1.6.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;1.0.1->org.scala-lang#scala-library;2.10.1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;1.0.1->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;1.0.1->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;1.0.1->org.slf4j#slf4j-api;1.6.4 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;1.0.1->org.slf4j#slf4j-api;1.6.4 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.slick#slick_2.10;1.0.1 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.slick#slick_2.10;3.1.1 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.slick#slick_2.10;3.1.1 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.slick#slick_2.10;3.1.1 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.scala-lang#scala-library;2.10.5 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.scala-lang#scala-library;2.10.5 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.slf4j#slf4j-api;1.7.10 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.slf4j#slf4j-api;1.7.10 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->com.typesafe#config;1.2.1 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->com.typesafe#config;1.2.1 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.reactivestreams#reactive-streams;1.0.0 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.reactivestreams#reactive-streams;1.0.0 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.scala-lang#scala-library;2.10.5 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.scala-lang#scala-library;2.10.5 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.slf4j#slf4j-api;1.7.10 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.slf4j#slf4j-api;1.7.10 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->com.typesafe#config;1.2.1 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->com.typesafe#config;1.2.1 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.reactivestreams#reactive-streams;1.0.0 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.reactivestreams#reactive-streams;1.0.0 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.slick#slick_2.10;3.1.1 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->mysql#mysql-connector-java;5.1.25 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->mysql#mysql-connector-java;5.1.25 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->mysql#mysql-connector-java;5.1.25 [compile->compile][0m
@@ -767,16 +882,19 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.akka#akka-actor_2.10;2.1.4 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.akka#akka-actor_2.10;2.1.4 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->org.scala-lang#scala-library;2.10.1 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->org.scala-lang#scala-library;2.10.2 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->org.scala-lang#scala-library;2.10.5 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->org.scala-lang#scala-library;2.10.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->org.scala-lang#scala-library;2.10.5 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->com.typesafe#config;1.0.0 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->com.typesafe#config;1.2.1 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->com.typesafe#config;1.0.0 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->com.typesafe#config;1.2.1 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->org.scala-lang#scala-library;2.10.1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->org.scala-lang#scala-library;2.10.5 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->org.scala-lang#scala-library;2.10.5 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->com.typesafe#config;1.0.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->com.typesafe#config;1.0.0 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->com.typesafe#config;1.2.1 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->com.typesafe#config;1.2.1 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.akka#akka-actor_2.10;2.1.4 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.akka#akka-slf4j_2.10;2.1.4 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.akka#akka-slf4j_2.10;2.1.4 [compile->runtime][0m
@@ -784,18 +902,21 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->com.typesafe.akka#akka-actor_2.10;2.1.4 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->com.typesafe.akka#akka-actor_2.10;2.1.4 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.scala-lang#scala-library;2.10.1 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.scala-lang#scala-library;2.10.2 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.scala-lang#scala-library;2.10.5 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.scala-lang#scala-library;2.10.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.scala-lang#scala-library;2.10.5 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.slf4j#slf4j-api;1.7.2 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.slf4j#slf4j-api;1.7.10 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.slf4j#slf4j-api;1.7.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.slf4j#slf4j-api;1.7.10 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->com.typesafe.akka#akka-actor_2.10;2.1.4 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->com.typesafe.akka#akka-actor_2.10;2.1.4 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.scala-lang#scala-library;2.10.1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.scala-lang#scala-library;2.10.5 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.scala-lang#scala-library;2.10.5 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.slf4j#slf4j-api;1.7.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.slf4j#slf4j-api;1.7.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.slf4j#slf4j-api;1.7.10 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.slf4j#slf4j-api;1.7.10 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.akka#akka-slf4j_2.10;2.1.4 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->ch.qos.logback#logback-classic;1.0.13 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->ch.qos.logback#logback-classic;1.0.13 [compile->runtime][0m
@@ -803,11 +924,14 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.13->ch.qos.logback#logback-core;1.0.13 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.13->ch.qos.logback#logback-core;1.0.13 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.13->org.slf4j#slf4j-api;1.7.5 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.13->org.slf4j#slf4j-api;1.7.10 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.13->org.slf4j#slf4j-api;1.7.5 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.13->org.slf4j#slf4j-api;1.7.10 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.13->ch.qos.logback#logback-core;1.0.13 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.13->ch.qos.logback#logback-core;1.0.13 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.13->org.slf4j#slf4j-api;1.7.5 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.13->org.slf4j#slf4j-api;1.7.5 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.13->org.slf4j#slf4j-api;1.7.10 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.13->org.slf4j#slf4j-api;1.7.10 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->ch.qos.logback#logback-classic;1.0.13 [compile->master][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'provided'[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for rest#rest_2.10;1.0 [provided][0m
@@ -971,21 +1095,26 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies net.liftweb#lift-json_2.10;2.5.1->com.thoughtworks.paranamer#paranamer;2.4.1 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies net.liftweb#lift-json_2.10;2.5.1->com.thoughtworks.paranamer#paranamer;2.4.1 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->net.liftweb#lift-json_2.10;2.5.1 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.slick#slick_2.10;1.0.1 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.slick#slick_2.10;1.0.1 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.slick#slick_2.10;1.0.1 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;1.0.1->org.scala-lang#scala-library;2.10.1 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;1.0.1->org.scala-lang#scala-library;2.10.2 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;1.0.1->org.scala-lang#scala-library;2.10.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;1.0.1->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;1.0.1->org.slf4j#slf4j-api;1.6.4 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;1.0.1->org.slf4j#slf4j-api;1.6.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;1.0.1->org.scala-lang#scala-library;2.10.1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;1.0.1->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;1.0.1->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;1.0.1->org.slf4j#slf4j-api;1.6.4 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;1.0.1->org.slf4j#slf4j-api;1.6.4 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.slick#slick_2.10;1.0.1 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.slick#slick_2.10;3.1.1 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.slick#slick_2.10;3.1.1 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.slick#slick_2.10;3.1.1 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.scala-lang#scala-library;2.10.5 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.scala-lang#scala-library;2.10.5 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.slf4j#slf4j-api;1.7.10 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.slf4j#slf4j-api;1.7.10 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->com.typesafe#config;1.2.1 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->com.typesafe#config;1.2.1 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.reactivestreams#reactive-streams;1.0.0 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.reactivestreams#reactive-streams;1.0.0 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.scala-lang#scala-library;2.10.5 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.scala-lang#scala-library;2.10.5 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.slf4j#slf4j-api;1.7.10 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.slf4j#slf4j-api;1.7.10 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->com.typesafe#config;1.2.1 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->com.typesafe#config;1.2.1 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.reactivestreams#reactive-streams;1.0.0 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.reactivestreams#reactive-streams;1.0.0 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.slick#slick_2.10;3.1.1 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->mysql#mysql-connector-java;5.1.25 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->mysql#mysql-connector-java;5.1.25 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->mysql#mysql-connector-java;5.1.25 [compile->compile][0m
@@ -994,16 +1123,19 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.akka#akka-actor_2.10;2.1.4 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.akka#akka-actor_2.10;2.1.4 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->org.scala-lang#scala-library;2.10.1 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->org.scala-lang#scala-library;2.10.2 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->org.scala-lang#scala-library;2.10.5 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->org.scala-lang#scala-library;2.10.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->org.scala-lang#scala-library;2.10.5 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->com.typesafe#config;1.0.0 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->com.typesafe#config;1.2.1 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->com.typesafe#config;1.0.0 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->com.typesafe#config;1.2.1 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->org.scala-lang#scala-library;2.10.1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->org.scala-lang#scala-library;2.10.5 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->org.scala-lang#scala-library;2.10.5 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->com.typesafe#config;1.0.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->com.typesafe#config;1.0.0 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->com.typesafe#config;1.2.1 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->com.typesafe#config;1.2.1 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.akka#akka-actor_2.10;2.1.4 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.akka#akka-slf4j_2.10;2.1.4 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.akka#akka-slf4j_2.10;2.1.4 [compile->runtime][0m
@@ -1011,18 +1143,21 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->com.typesafe.akka#akka-actor_2.10;2.1.4 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->com.typesafe.akka#akka-actor_2.10;2.1.4 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.scala-lang#scala-library;2.10.1 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.scala-lang#scala-library;2.10.2 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.scala-lang#scala-library;2.10.5 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.scala-lang#scala-library;2.10.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.scala-lang#scala-library;2.10.5 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.slf4j#slf4j-api;1.7.2 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.slf4j#slf4j-api;1.7.10 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.slf4j#slf4j-api;1.7.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.slf4j#slf4j-api;1.7.10 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->com.typesafe.akka#akka-actor_2.10;2.1.4 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->com.typesafe.akka#akka-actor_2.10;2.1.4 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.scala-lang#scala-library;2.10.1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.scala-lang#scala-library;2.10.5 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.scala-lang#scala-library;2.10.5 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.slf4j#slf4j-api;1.7.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.slf4j#slf4j-api;1.7.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.slf4j#slf4j-api;1.7.10 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.slf4j#slf4j-api;1.7.10 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.akka#akka-slf4j_2.10;2.1.4 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->ch.qos.logback#logback-classic;1.0.13 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->ch.qos.logback#logback-classic;1.0.13 [compile->runtime][0m
@@ -1030,11 +1165,14 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.13->ch.qos.logback#logback-core;1.0.13 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.13->ch.qos.logback#logback-core;1.0.13 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.13->org.slf4j#slf4j-api;1.7.5 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.13->org.slf4j#slf4j-api;1.7.10 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.13->org.slf4j#slf4j-api;1.7.5 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.13->org.slf4j#slf4j-api;1.7.10 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.13->ch.qos.logback#logback-core;1.0.13 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.13->ch.qos.logback#logback-core;1.0.13 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.13->org.slf4j#slf4j-api;1.7.5 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.13->org.slf4j#slf4j-api;1.7.5 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.13->org.slf4j#slf4j-api;1.7.10 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.13->org.slf4j#slf4j-api;1.7.10 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->ch.qos.logback#logback-classic;1.0.13 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for rest#rest_2.10;1.0 [optional][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for rest#rest_2.10;1.0 [provided][0m
@@ -1197,21 +1335,26 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies net.liftweb#lift-json_2.10;2.5.1->com.thoughtworks.paranamer#paranamer;2.4.1 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies net.liftweb#lift-json_2.10;2.5.1->com.thoughtworks.paranamer#paranamer;2.4.1 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->net.liftweb#lift-json_2.10;2.5.1 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.slick#slick_2.10;1.0.1 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.slick#slick_2.10;1.0.1 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.slick#slick_2.10;1.0.1 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;1.0.1->org.scala-lang#scala-library;2.10.1 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;1.0.1->org.scala-lang#scala-library;2.10.2 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;1.0.1->org.scala-lang#scala-library;2.10.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;1.0.1->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;1.0.1->org.slf4j#slf4j-api;1.6.4 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;1.0.1->org.slf4j#slf4j-api;1.6.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;1.0.1->org.scala-lang#scala-library;2.10.1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;1.0.1->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;1.0.1->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;1.0.1->org.slf4j#slf4j-api;1.6.4 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;1.0.1->org.slf4j#slf4j-api;1.6.4 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.slick#slick_2.10;1.0.1 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.slick#slick_2.10;3.1.1 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.slick#slick_2.10;3.1.1 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.slick#slick_2.10;3.1.1 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.scala-lang#scala-library;2.10.5 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.scala-lang#scala-library;2.10.5 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.slf4j#slf4j-api;1.7.10 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.slf4j#slf4j-api;1.7.10 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->com.typesafe#config;1.2.1 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->com.typesafe#config;1.2.1 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.reactivestreams#reactive-streams;1.0.0 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.reactivestreams#reactive-streams;1.0.0 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.scala-lang#scala-library;2.10.5 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.scala-lang#scala-library;2.10.5 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.slf4j#slf4j-api;1.7.10 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.slf4j#slf4j-api;1.7.10 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->com.typesafe#config;1.2.1 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->com.typesafe#config;1.2.1 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.reactivestreams#reactive-streams;1.0.0 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.reactivestreams#reactive-streams;1.0.0 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.slick#slick_2.10;3.1.1 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->mysql#mysql-connector-java;5.1.25 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->mysql#mysql-connector-java;5.1.25 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->mysql#mysql-connector-java;5.1.25 [compile->compile][0m
@@ -1220,16 +1363,19 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.akka#akka-actor_2.10;2.1.4 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.akka#akka-actor_2.10;2.1.4 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->org.scala-lang#scala-library;2.10.1 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->org.scala-lang#scala-library;2.10.2 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->org.scala-lang#scala-library;2.10.5 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->org.scala-lang#scala-library;2.10.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->org.scala-lang#scala-library;2.10.5 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->com.typesafe#config;1.0.0 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->com.typesafe#config;1.2.1 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->com.typesafe#config;1.0.0 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->com.typesafe#config;1.2.1 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->org.scala-lang#scala-library;2.10.1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->org.scala-lang#scala-library;2.10.5 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->org.scala-lang#scala-library;2.10.5 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->com.typesafe#config;1.0.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->com.typesafe#config;1.0.0 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->com.typesafe#config;1.2.1 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->com.typesafe#config;1.2.1 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.akka#akka-actor_2.10;2.1.4 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.akka#akka-slf4j_2.10;2.1.4 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.akka#akka-slf4j_2.10;2.1.4 [compile->runtime][0m
@@ -1237,18 +1383,21 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->com.typesafe.akka#akka-actor_2.10;2.1.4 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->com.typesafe.akka#akka-actor_2.10;2.1.4 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.scala-lang#scala-library;2.10.1 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.scala-lang#scala-library;2.10.2 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.scala-lang#scala-library;2.10.5 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.scala-lang#scala-library;2.10.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.scala-lang#scala-library;2.10.5 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.slf4j#slf4j-api;1.7.2 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.slf4j#slf4j-api;1.7.10 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.slf4j#slf4j-api;1.7.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.slf4j#slf4j-api;1.7.10 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->com.typesafe.akka#akka-actor_2.10;2.1.4 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->com.typesafe.akka#akka-actor_2.10;2.1.4 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.scala-lang#scala-library;2.10.1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.scala-lang#scala-library;2.10.5 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.scala-lang#scala-library;2.10.5 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.slf4j#slf4j-api;1.7.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.slf4j#slf4j-api;1.7.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.slf4j#slf4j-api;1.7.10 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.slf4j#slf4j-api;1.7.10 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.akka#akka-slf4j_2.10;2.1.4 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->ch.qos.logback#logback-classic;1.0.13 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->ch.qos.logback#logback-classic;1.0.13 [compile->runtime][0m
@@ -1256,11 +1405,14 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.13->ch.qos.logback#logback-core;1.0.13 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.13->ch.qos.logback#logback-core;1.0.13 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.13->org.slf4j#slf4j-api;1.7.5 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.13->org.slf4j#slf4j-api;1.7.10 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.13->org.slf4j#slf4j-api;1.7.5 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.13->org.slf4j#slf4j-api;1.7.10 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.13->ch.qos.logback#logback-core;1.0.13 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.13->ch.qos.logback#logback-core;1.0.13 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.13->org.slf4j#slf4j-api;1.7.5 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.13->org.slf4j#slf4j-api;1.7.5 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.13->org.slf4j#slf4j-api;1.7.10 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.13->org.slf4j#slf4j-api;1.7.10 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->ch.qos.logback#logback-classic;1.0.13 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for rest#rest_2.10;1.0 [optional][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'test-internal'[0m
@@ -1423,21 +1575,26 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies net.liftweb#lift-json_2.10;2.5.1->com.thoughtworks.paranamer#paranamer;2.4.1 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies net.liftweb#lift-json_2.10;2.5.1->com.thoughtworks.paranamer#paranamer;2.4.1 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->net.liftweb#lift-json_2.10;2.5.1 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.slick#slick_2.10;1.0.1 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.slick#slick_2.10;1.0.1 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.slick#slick_2.10;1.0.1 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;1.0.1->org.scala-lang#scala-library;2.10.1 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;1.0.1->org.scala-lang#scala-library;2.10.2 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;1.0.1->org.scala-lang#scala-library;2.10.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;1.0.1->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;1.0.1->org.slf4j#slf4j-api;1.6.4 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;1.0.1->org.slf4j#slf4j-api;1.6.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;1.0.1->org.scala-lang#scala-library;2.10.1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;1.0.1->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;1.0.1->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;1.0.1->org.slf4j#slf4j-api;1.6.4 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;1.0.1->org.slf4j#slf4j-api;1.6.4 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.slick#slick_2.10;1.0.1 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.slick#slick_2.10;3.1.1 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.slick#slick_2.10;3.1.1 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.slick#slick_2.10;3.1.1 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.scala-lang#scala-library;2.10.5 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.scala-lang#scala-library;2.10.5 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.slf4j#slf4j-api;1.7.10 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.slf4j#slf4j-api;1.7.10 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->com.typesafe#config;1.2.1 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->com.typesafe#config;1.2.1 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.reactivestreams#reactive-streams;1.0.0 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.reactivestreams#reactive-streams;1.0.0 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.scala-lang#scala-library;2.10.5 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.scala-lang#scala-library;2.10.5 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.slf4j#slf4j-api;1.7.10 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.slf4j#slf4j-api;1.7.10 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->com.typesafe#config;1.2.1 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->com.typesafe#config;1.2.1 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.reactivestreams#reactive-streams;1.0.0 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.10;3.1.1->org.reactivestreams#reactive-streams;1.0.0 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.slick#slick_2.10;3.1.1 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->mysql#mysql-connector-java;5.1.25 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->mysql#mysql-connector-java;5.1.25 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->mysql#mysql-connector-java;5.1.25 [compile->compile][0m
@@ -1446,16 +1603,19 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.akka#akka-actor_2.10;2.1.4 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.akka#akka-actor_2.10;2.1.4 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->org.scala-lang#scala-library;2.10.1 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->org.scala-lang#scala-library;2.10.2 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->org.scala-lang#scala-library;2.10.5 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->org.scala-lang#scala-library;2.10.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->org.scala-lang#scala-library;2.10.5 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->com.typesafe#config;1.0.0 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->com.typesafe#config;1.2.1 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->com.typesafe#config;1.0.0 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->com.typesafe#config;1.2.1 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->org.scala-lang#scala-library;2.10.1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->org.scala-lang#scala-library;2.10.5 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->org.scala-lang#scala-library;2.10.5 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->com.typesafe#config;1.0.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->com.typesafe#config;1.0.0 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->com.typesafe#config;1.2.1 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-actor_2.10;2.1.4->com.typesafe#config;1.2.1 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.akka#akka-actor_2.10;2.1.4 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.akka#akka-slf4j_2.10;2.1.4 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.akka#akka-slf4j_2.10;2.1.4 [compile->runtime][0m
@@ -1463,18 +1623,21 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->com.typesafe.akka#akka-actor_2.10;2.1.4 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->com.typesafe.akka#akka-actor_2.10;2.1.4 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.scala-lang#scala-library;2.10.1 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.scala-lang#scala-library;2.10.2 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.scala-lang#scala-library;2.10.5 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.scala-lang#scala-library;2.10.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.scala-lang#scala-library;2.10.5 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.slf4j#slf4j-api;1.7.2 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.slf4j#slf4j-api;1.7.10 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.slf4j#slf4j-api;1.7.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.slf4j#slf4j-api;1.7.10 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->com.typesafe.akka#akka-actor_2.10;2.1.4 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->com.typesafe.akka#akka-actor_2.10;2.1.4 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.scala-lang#scala-library;2.10.1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.scala-lang#scala-library;2.10.5 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.scala-lang#scala-library;2.10.5 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.slf4j#slf4j-api;1.7.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.slf4j#slf4j-api;1.7.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.slf4j#slf4j-api;1.7.10 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-slf4j_2.10;2.1.4->org.slf4j#slf4j-api;1.7.10 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->com.typesafe.akka#akka-slf4j_2.10;2.1.4 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->ch.qos.logback#logback-classic;1.0.13 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->ch.qos.logback#logback-classic;1.0.13 [compile->runtime][0m
@@ -1482,11 +1645,14 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.13->ch.qos.logback#logback-core;1.0.13 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.13->ch.qos.logback#logback-core;1.0.13 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.13->org.slf4j#slf4j-api;1.7.5 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.13->org.slf4j#slf4j-api;1.7.10 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.13->org.slf4j#slf4j-api;1.7.5 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.13->org.slf4j#slf4j-api;1.7.10 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.13->ch.qos.logback#logback-core;1.0.13 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.13->ch.qos.logback#logback-core;1.0.13 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.13->org.slf4j#slf4j-api;1.7.5 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.13->org.slf4j#slf4j-api;1.7.5 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.13->org.slf4j#slf4j-api;1.7.10 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.13->org.slf4j#slf4j-api;1.7.10 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies rest#rest_2.10;1.0->ch.qos.logback#logback-classic;1.0.13 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for rest#rest_2.10;1.0 [optional][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for rest#rest_2.10;1.0 [provided][0m
@@ -1557,7 +1723,12 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] io.spray#spray-http;1.1-M8!spray-http.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] io.spray#spray-routing;1.1-M8!spray-routing.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] net.liftweb#lift-json_2.10;2.5.1!lift-json_2.10.jar[0m
-[0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.slick#slick_2.10;1.0.1!slick_2.10.jar[0m
+[0m[[0mdebug[0m] [0m		tried https://jcenter.bintray.com/com/typesafe/slick/slick_2.10/3.1.1/slick_2.10-3.1.1.jar[0m
+[0m[[0minfo[0m] [0mdownloading https://jcenter.bintray.com/com/typesafe/slick/slick_2.10/3.1.1/slick_2.10-3.1.1.jar ...[0m
+[0m[[0mdebug[0m] [0m	jcenter: downloading https://jcenter.bintray.com/com/typesafe/slick/slick_2.10/3.1.1/slick_2.10-3.1.1.jar[0m
+[0m[[0mdebug[0m] [0m	jcenter: downloading https://jcenter.bintray.com/com/typesafe/slick/slick_2.10/3.1.1/slick_2.10-3.1.1.jar.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for https://jcenter.bintray.com/com/typesafe/slick/slick_2.10/3.1.1/slick_2.10-3.1.1.jar[0m
+[0m[[0minfo[0m] [0m	[SUCCESSFUL ] com.typesafe.slick#slick_2.10;3.1.1!slick_2.10.jar(bundle) (191202ms)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] mysql#mysql-connector-java;5.1.25!mysql-connector-java.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.akka#akka-actor_2.10;2.1.4!akka-actor_2.10.jar(bundle)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.akka#akka-slf4j_2.10;2.1.4!akka-slf4j_2.10.jar(bundle)[0m
@@ -1573,14 +1744,31 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.thoughtworks.paranamer#paranamer;2.4.1!paranamer.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-compiler;2.10.0!scala-compiler.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-reflect;2.10.0!scala-reflect.jar[0m
-[0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe#config;1.0.0!config.jar(bundle)[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-library;2.10.5!scala-library.jar[0m
+[0m[[0mdebug[0m] [0m		tried https://jcenter.bintray.com/org/slf4j/slf4j-api/1.7.10/slf4j-api-1.7.10.jar[0m
+[0m[[0minfo[0m] [0mdownloading https://jcenter.bintray.com/org/slf4j/slf4j-api/1.7.10/slf4j-api-1.7.10.jar ...[0m
+[0m[[0mdebug[0m] [0m	jcenter: downloading https://jcenter.bintray.com/org/slf4j/slf4j-api/1.7.10/slf4j-api-1.7.10.jar[0m
+[0m[[0mdebug[0m] [0m	jcenter: downloading https://jcenter.bintray.com/org/slf4j/slf4j-api/1.7.10/slf4j-api-1.7.10.jar.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for https://jcenter.bintray.com/org/slf4j/slf4j-api/1.7.10/slf4j-api-1.7.10.jar[0m
+[0m[[0minfo[0m] [0m	[SUCCESSFUL ] org.slf4j#slf4j-api;1.7.10!slf4j-api.jar (2186ms)[0m
+[0m[[0mdebug[0m] [0m		tried https://jcenter.bintray.com/com/typesafe/config/1.2.1/config-1.2.1.jar[0m
+[0m[[0minfo[0m] [0mdownloading https://jcenter.bintray.com/com/typesafe/config/1.2.1/config-1.2.1.jar ...[0m
+[0m[[0mdebug[0m] [0m	jcenter: downloading https://jcenter.bintray.com/com/typesafe/config/1.2.1/config-1.2.1.jar[0m
+[0m[[0mdebug[0m] [0m	jcenter: downloading https://jcenter.bintray.com/com/typesafe/config/1.2.1/config-1.2.1.jar.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for https://jcenter.bintray.com/com/typesafe/config/1.2.1/config-1.2.1.jar[0m
+[0m[[0minfo[0m] [0m	[SUCCESSFUL ] com.typesafe#config;1.2.1!config.jar(bundle) (4293ms)[0m
+[0m[[0mdebug[0m] [0m		tried https://jcenter.bintray.com/org/reactivestreams/reactive-streams/1.0.0/reactive-streams-1.0.0.jar[0m
+[0m[[0minfo[0m] [0mdownloading https://jcenter.bintray.com/org/reactivestreams/reactive-streams/1.0.0/reactive-streams-1.0.0.jar ...[0m
+[0m[[0mdebug[0m] [0m	jcenter: downloading https://jcenter.bintray.com/org/reactivestreams/reactive-streams/1.0.0/reactive-streams-1.0.0.jar[0m
+[0m[[0mdebug[0m] [0m	jcenter: downloading https://jcenter.bintray.com/org/reactivestreams/reactive-streams/1.0.0/reactive-streams-1.0.0.jar.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for https://jcenter.bintray.com/org/reactivestreams/reactive-streams/1.0.0/reactive-streams-1.0.0.jar[0m
+[0m[[0minfo[0m] [0m	[SUCCESSFUL ] org.reactivestreams#reactive-streams;1.0.0!reactive-streams.jar (1640ms)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] ch.qos.logback#logback-core;1.0.13!logback-core.jar[0m
-[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.slf4j#slf4j-api;1.7.5!slf4j-api.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-compiler;2.10.2!scala-compiler.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-reflect;2.10.2!scala-reflect.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#jline;2.10.2!jline.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.fusesource.jansi#jansi;1.4!jansi.jar[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 1428ms :: artifacts dl 38ms[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 23236ms :: artifacts dl 199371ms[0m
 [0m[[0mdebug[0m] [0m	report for rest#rest_2.10;1.0 compile produced in /Users/ryansaeta/Desktop/grocery-backend/target/resolution-cache/reports/rest-rest_2.10-compile.xml[0m
 [0m[[0mdebug[0m] [0m	report for rest#rest_2.10;1.0 runtime produced in /Users/ryansaeta/Desktop/grocery-backend/target/resolution-cache/reports/rest-rest_2.10-runtime.xml[0m
 [0m[[0mdebug[0m] [0m	report for rest#rest_2.10;1.0 test produced in /Users/ryansaeta/Desktop/grocery-backend/target/resolution-cache/reports/rest-rest_2.10-test.xml[0m
@@ -1594,5 +1782,10 @@
 [0m[[0mdebug[0m] [0m	report for rest#rest_2.10;1.0 docs produced in /Users/ryansaeta/Desktop/grocery-backend/target/resolution-cache/reports/rest-rest_2.10-docs.xml[0m
 [0m[[0mdebug[0m] [0m	report for rest#rest_2.10;1.0 pom produced in /Users/ryansaeta/Desktop/grocery-backend/target/resolution-cache/reports/rest-rest_2.10-pom.xml[0m
 [0m[[0mdebug[0m] [0m	report for rest#rest_2.10;1.0 scala-tool produced in /Users/ryansaeta/Desktop/grocery-backend/target/resolution-cache/reports/rest-rest_2.10-scala-tool.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (1428ms resolve - 38ms download)[0m
+[0m[[0mdebug[0m] [0m	resolve done (23236ms resolve - 199371ms download)[0m
 [0m[[0minfo[0m] [0mDone updating.[0m
+[0m[[33mwarn[0m] [0mScala version was updated by one of library dependencies:[0m
+[0m[[33mwarn[0m] [0m	* org.scala-lang:scala-library:(2.10.2, 2.10.0, 2.10.1) -> 2.10.5[0m
+[0m[[33mwarn[0m] [0mTo force scalaVersion, add the following:[0m
+[0m[[33mwarn[0m] [0m	ivyScala := ivyScala.value map { _.copy(overrideScalaVersion = true) }[0m
+[0m[[33mwarn[0m] [0mRun 'evicted' to see detailed eviction warnings[0m

@@ -4,9 +4,13 @@ import com.gh.helper.config.Configuration
 import com.gh.helper.domain._
 import java.sql._
 import java.util.Date
+import java.sql.Timestamp
 import scala.Some
-import scala.slick.driver.MySQLDriver.simple.Database.threadLocalSession
-import scala.slick.driver.MySQLDriver.simple._
+import slick.jdbc.JdbcBackend.Database
+import scala.concurrent.ExecutionContext.Implicits.global
+import scala.concurrent._
+import scala.concurrent.duration._
+import slick.driver.MySQLDriver.api._
 import slick.jdbc.meta.MTable
 
 /**
@@ -18,12 +22,20 @@ class ItemDAO extends Configuration {
   private val db = Database.forURL(url = "jdbc:mysql://%s:%d/%s".format(dbHost, dbPort, dbName),
     user = dbUser, password = dbPassword, driver = "com.mysql.jdbc.Driver")
 
-  // create tables if not exist
-  db.withSession {
-    if (MTable.getTables("items").list().isEmpty) {
-      Items.ddl.create
-    }
-  }
+  private val items = TableQuery[Items]
+
+   // create tables if not exist
+  try {
+    Await.result(db.run(DBIO.seq(
+      MTable.getTables map (tables => {
+        if (!tables.exists(_.name.name == items.baseTableRow.tableName)) {
+          Await.result(db.run(items.schema.create), Duration.Inf)
+        }
+      })
+    )), Duration.Inf)
+  } finally db.close
+
+  val insertQuery = items returning items.map(_.id) into ((item, id) => item.copy(id = Some(id)))
 
   /**
    * Saves groceryList entity into database.
@@ -33,10 +45,9 @@ class ItemDAO extends Configuration {
    */
   def create(groceryListId: Long, item: Item): Either[Failure, Item] = {
     try {
-      val id = db.withSession {
-        Items returning Items.id insert item.copy(listId = Some(groceryListId), createDate = Some(new Date))
-      }
-      Right(item.copy(id = Some(id), listId = Some(groceryListId), createDate = Some(new Date)))
+      val action = insertQuery += item.copy(createDate = Some(new Timestamp((new Date).getTime)))
+      val res = Await.result(db.run(action),Duration.Inf)
+      Right(res)      
     } catch {
       case e: SQLException =>
         Left(databaseError(e))
@@ -51,13 +62,13 @@ class ItemDAO extends Configuration {
    * @return updated grocerList entity
    */
   def update(id: Long, item: Item): Either[Failure, Item] = {
-    try
-      db.withSession {
-        Items.where(_.id === id) update item.copy(id = Some(id)) match {
-          case 0 => Left(notFoundError(id))
-          case _ => Right(item.copy(id = Some(id)))
-        }
+    try {
+      val query = items.filter { _.id === id } update item.copy(id = Some(id))
+      Await.result(db.run(query), Duration.Inf) match {
+        case 0 => Left(notFoundError(id))
+        case _ => Right(item.copy(id = Some(id)))
       }
+    }
     catch {
       case e: SQLException =>
         Left(databaseError(e))
@@ -70,34 +81,16 @@ class ItemDAO extends Configuration {
    * @param id id of the customer to delete
    * @return deleted customer entity
    */
-  def delete(id: Long): Either[Failure, Item] = {
+  def delete(id: Long): Either[Failure, Long] = {
     try {
-      db.withTransaction {
-        val query = GroceryLists.where(_.id === id)
-        val items = query.run.asInstanceOf[List[Item]]
-        items.size match {
-          case 0 =>
-            Left(notFoundError(id))
-          case _ => {
-            query.delete
-            Right(items.head)
-          }
+      val query = items.filter(_.id === id).delete
+      val res = Await.result(db.run(query), Duration.Inf)
+      res match {
+        case 0 =>
+          Left(notFoundError(id))
+        case _ => {
+          Right(id)
         }
-      }
-    } catch {
-      case e: SQLException =>
-        Left(databaseError(e))
-    }
-  }
-
-  def getAll(): Either[Failure, List[Item]] = {
-    try {
-      db.withSession {
-        val query = for {
-          item <- Items 
-        } yield item
-        val sortedData = query.run.toList.sortBy(- _.createDate.get.getTime)
-        Right(sortedData)
       }
     } catch {
       case e: SQLException =>
@@ -113,13 +106,12 @@ class ItemDAO extends Configuration {
    */
   def get(id: Long): Either[Failure, Item] = {
     try {
-      db.withSession {
-        Items.findById(id).firstOption match {
-          case Some(item: Item) =>
-            Right(item)
-          case _ =>
-            Left(notFoundError(id))
-        }
+      val query = items.filter{ _.id === id }.result
+      Await.result(db.run(query), Duration.Inf) match {
+        case item: Item =>
+          Right(item)
+        case _ =>
+          Left(notFoundError(id))
       }
     } catch {
       case e: SQLException =>
@@ -133,22 +125,15 @@ class ItemDAO extends Configuration {
    * @param  userId
    * @return list of grocerylists that match given userId
    */
-  def getListItems(listId: Long): Either[Failure, List[Item]] = {
+  def getListItems(listId: Long): Either[Failure, Seq[Item]] = {
     try {
       // System.out.println("Finding items with listID")
-      db.withSession {
-        val query = for {
-          item <- Items if {
-            item.listId === listId
-          }
-        } yield item
-        query.run.toList.sortBy(_.createDate) match {
-          case items: List[Item] => 
-            System.out.println("Got here (147) " + items)
-            Right(items)
-          case _ => {
-            Left(noItemsInList(listId))
-          }
+      val query = items.filter{ _.listId === listId }.result
+      Await.result(db.run(query), Duration.Inf).toList match {
+        case items: Seq[Item] => 
+          Right(items)
+        case _ => {
+          Left(noitemsInList(listId))
         }
       }
     } catch {
@@ -176,8 +161,8 @@ class ItemDAO extends Configuration {
     Failure("Customer with id=%d does not exist".format(customerId), FailureType.NotFound)
 
 
-  protected def noItemsInList(listId: Long) = 
-    Failure("Items with list id=%d does not exist".format(listId), FailureType.NotFound)
+  protected def noitemsInList(listId: Long) = 
+    Failure("items with list id=%d does not exist".format(listId), FailureType.NotFound)
 
 
 

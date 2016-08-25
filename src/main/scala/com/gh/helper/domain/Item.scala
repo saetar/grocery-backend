@@ -1,7 +1,8 @@
 package com.gh.helper.domain
 
-import scala.slick.driver.MySQLDriver.simple._
-
+import slick.driver.MySQLDriver.api._
+import scala.concurrent.ExecutionContext.Implicits.global
+import java.sql.Timestamp
 /**
  * Item entity.
  *
@@ -10,38 +11,27 @@ import scala.slick.driver.MySQLDriver.simple._
  * @param name      name of item
  * @param price     price of item
  */
-case class Item(id: Option[Long], listId: Option[Long], name: String, price: Double, category: Option[String], createDate: Option[java.util.Date])
+case class Item(id: Option[Long], listId: Option[Long], name: String, price: Double, category: Option[String], createDate: Option[Timestamp])
 
 /**
  * Mapped customers table object.
  */
-object Items extends Table[Item]("items") {
+class Items(tag: Tag) extends Table[Item](tag, "items") {
 
   def id = column[Long]("id", O.PrimaryKey, O.AutoInc)
 
-  def listId = column[Long]("listId", O.Nullable)
+  def listId = column[Long]("listId")
 
-  def name = column[String]("name")
+  def name = column[String]("name", O.Length(64))
 
   def price = column[Double]("price")
 
-  def category = column[String]("category", O.Nullable) 
+  def category = column[String]("category", O.Length(64)) 
 
-  def createDate = column[java.util.Date]("createDate")
+  def createDate = column[Timestamp]("createDate")
 
-  def * = id.? ~ listId.? ~ name ~ price ~ category.? ~ createDate.? <> (Item, Item.unapply _)
+  def * = (id.?, listId.?, name, price, category.?, createDate.?) <> (Item.tupled, Item.unapply _)
 
   // def list = foreignKey("List_FK", listId, GroceryLists)(_.id)
 
-  implicit val dateTypeMapper = MappedTypeMapper.base[java.util.Date, java.sql.Timestamp](
-  {
-    ud => new java.sql.Timestamp(ud.getTime)
-  }, {
-    ts => new java.util.Date(ts.getTime)
-  })
-
-  val findById = for {
-    id <- Parameters[Long]
-    c <- this if c.id is id
-  } yield c
 }

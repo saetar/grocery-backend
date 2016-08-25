@@ -1,7 +1,7 @@
 package com.gh.helper.domain
 
-import scala.slick.driver.MySQLDriver.simple._
-
+import slick.driver.H2Driver.api._
+import scala.concurrent.ExecutionContext.Implicits.global
 /**
  * Customer entity.
  *
@@ -10,34 +10,31 @@ import scala.slick.driver.MySQLDriver.simple._
  * @param lastName  last name
  * @param fbToken   facebook access token
  */
-case class User(fbId: String, firstName: String, lastName: String, createDate: Option[java.util.Date])
+case class User(fbId: String, firstName: String, lastName: String, createDate: Option[java.sql.Timestamp])
 
 /**
  * Mapped customers table object.
  */
-object Users extends Table[User]("users") {
+class Users(tag: Tag) extends Table[User](tag, "users") {
 
-  def fbId = column[String]("fbId", O.PrimaryKey)
+  def fbId = column[String]("fbId", O.PrimaryKey, O.Length(64))
 
-  def firstName = column[String]("firstName")
+  def firstName = column[String]("firstName", O.Length(64))
 
-  def lastName = column[String]("lastName")
+  def lastName = column[String]("lastName", O.Length(64))
 
-  def createDate = column[java.util.Date]("createDate")
+  def createDate = column[java.sql.Timestamp]("createDate")
 
-  def * = fbId ~ firstName ~ lastName ~ createDate.? <>(User, User.unapply _)
+  def * = (fbId, firstName, lastName, createDate.?) <>(User.tupled, User.unapply)
 
   def uniqueFbid = index("unique_fbId", fbId, unique = true)
 
-  implicit val dateTypeMapper = MappedTypeMapper.base[java.util.Date, java.sql.Timestamp](
-  {
-    ud => new java.sql.Timestamp(ud.getTime)
-  }, {
-    ts => new java.util.Date(ts.getTime)
-  })
+  // val findById = for {
+  //   fbId <- Parameters[String]
+  //   c <- this if c.fbId is fbId
+  // } yield c
+}
 
-  val findById = for {
-    fbId <- Parameters[String]
-    c <- this if c.fbId is fbId
-  } yield c
+object UserT {
+  val users = TableQuery[Users]
 }

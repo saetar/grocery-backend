@@ -74,13 +74,6 @@ trait RestService extends HttpService with SLF4JLogging {
 
   val rest = respondWithMediaType(MediaTypes.`application/json`) {
       path("grocerylist") {
-        get {
-          ctx: RequestContext =>
-            handleRequest(ctx) {
-              log.debug("Retrieving all grocerylists")
-              groceryListService.getAll
-            }
-        } ~
         post {
           entity(Unmarshaller(MediaTypes.`application/json`) {
             case httpEntity: HttpEntity =>
@@ -150,6 +143,16 @@ trait RestService extends HttpService with SLF4JLogging {
                 }
           }
         }
+      } ~
+      path("user" / LongNumber) {
+        fbId =>
+          get {
+            ctx: RequestContext =>
+              handleRequest(ctx) {
+                log.debug("Getting user with fbId: %s" format fbId)
+                userService.get(fbId.toString)
+              }
+          }
       } ~
       path("user" / LongNumber / "grocerylist") {
         fbId =>

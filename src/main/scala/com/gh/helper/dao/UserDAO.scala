@@ -3,12 +3,15 @@ package com.gh.helper.dao
 import com.gh.helper.config.Configuration
 import com.gh.helper.domain._
 import java.sql._
+import java.sql.Timestamp
+import java.util.Date
 import scala.Some
-import scala.slick.driver.MySQLDriver.simple.Database.threadLocalSession
-import scala.slick.driver.MySQLDriver.simple._
+import slick.jdbc.JdbcBackend.Database
+import scala.concurrent.ExecutionContext.Implicits.global
+import scala.concurrent._
+import scala.concurrent.duration._
+import slick.driver.MySQLDriver.api._
 import slick.jdbc.meta.MTable
-import com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException
-
 
 class UserDAO extends Configuration {
 
@@ -16,12 +19,15 @@ class UserDAO extends Configuration {
   private val db = Database.forURL(url = "jdbc:mysql://%s:%d/%s".format(dbHost, dbPort, dbName),
     user = dbUser, password = dbPassword, driver = "com.mysql.jdbc.Driver")
 
+  private val users = TableQuery[Users]
+
   // create tables if not exist
-  db.withSession {
-    if (MTable.getTables("users").list().isEmpty) {
-      Users.ddl.create
-    }
-  }
+  Await.result(db.run(DBIO.seq(
+  MTable.getTables map (tables => {
+    if (!tables.exists(_.name.name == users.baseTableRow.tableName))
+      Await.result(db.run(users.schema.create), Duration.Inf)
+    })
+  )), Duration.Inf)
 
   /**
    * Saves customer entity into database.
@@ -31,14 +37,17 @@ class UserDAO extends Configuration {
    */
   def create(user: User): Either[Failure, User] = {
     try {
-      val createDate = db.withSession {
-        Users insert user.copy(createDate = Some(new java.util.Date))
+      val query = users += user
+      Await.result(db.run(query), Duration.Inf) match {
+        case 0 => {
+          Left(databaseError("Error: could not insert user"))
+        }
+        case _ => {
+          Right(user.copy(createDate = Some(new Timestamp((new Date).getTime))))
+        }
       }
-      Right(user.copy(createDate = Some(new java.util.Date)))
+
     } catch {
-      case e: MySQLIntegrityConstraintViolationException => {
-        update(user.fbId, user)
-      }
       case e: SQLException => {        
         Left(databaseError(e))
       }
@@ -53,13 +62,13 @@ class UserDAO extends Configuration {
    * @return updated customer entity
    */
   def update(fbId: String, user: User): Either[Failure, User] = {
-    try
-      db.withSession {
-        Users.where(_.fbId === fbId) update user.copy(fbId = fbId) match {
-          case 0 => Left(notFoundError(fbId))
-          case _ => Right(user.copy(fbId = fbId))
-        }
+    try { 
+      val query = users.filter { _.fbId === fbId } update user.copy(fbId = fbId)
+      Await.result(db.run(query), Duration.Inf) match {
+        case 0 => Left(notFoundError(fbId))
+        case _ => Right(user.copy(fbId = fbId))
       }
+    }
     catch {
       case e: SQLException => {
         System.out.println(e)
@@ -74,18 +83,14 @@ class UserDAO extends Configuration {
    * @param id id of the customer to delete
    * @return deleted customer entity
    */
-  def delete(id: String): Either[Failure, User] = {
+  def delete(id: String): Either[Failure, String] = {
     try {
-      db.withTransaction {
-        val query = Users.where(_.fbId === id)
-        val users = query.run.asInstanceOf[List[User]]
-        users.size match {
-          case 0 =>
-            Left(notFoundError(id))
-          case _ => {
-            query.delete
-            Right(users.head)
-          }
+      val query = users.filter { _.fbId === id }.delete
+      Await.result(db.run(query), Duration.Inf) match {
+        case 0 =>
+          Left(notFoundError(id))
+        case _ => {
+          Right(id)
         }
       }
     } catch {
@@ -103,13 +108,11 @@ class UserDAO extends Configuration {
    */
   def get(id: String): Either[Failure, User] = {
     try {
-      db.withSession {
-        Users.findById(id).firstOption match {
-          case Some(user: User) =>
-            Right(user)
-          case _ =>
-            Left(notFoundError(id))
-        }
+      Await.result(db.run(users.filter { _.fbId === id }.result), Duration.Inf) match {
+        case users: Seq[User] =>
+          Right(users.head)
+        case _ =>
+          Left(notFoundError(id))
       }
     } catch {
       case e: SQLException =>
@@ -137,4 +140,7 @@ class UserDAO extends Configuration {
 
   protected def notFoundError(fbId: String) = 
     Failure("User with fbId=%s does not exist".format(fbId), FailureType.NotFound)
+
+  protected def databaseError(message: String) = 
+    Failure("%s could not be inserted".format(message), FailureType.DatabaseFailure)
 }

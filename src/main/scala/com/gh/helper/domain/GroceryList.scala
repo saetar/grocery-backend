@@ -1,6 +1,11 @@
 package com.gh.helper.domain
 
-import scala.slick.driver.MySQLDriver.simple._
+// import slick.driver.MySQLDriver.simple._
+import slick.model.ForeignKeyAction
+
+import slick.driver.MySQLDriver.api._
+import scala.concurrent.ExecutionContext.Implicits.global
+import java.sql.Timestamp
 
 /**
  * Customer entity.
@@ -10,45 +15,28 @@ import scala.slick.driver.MySQLDriver.simple._
  * @param store     store
  * @param details   details
  */
-case class GroceryList(id: Option[Long], userId: String, title: String, store: String, details: String, createDate: Option[java.util.Date])
+case class GroceryList(id: Option[Long], userId: String, title: String, store: String, details: String, createDate: Option[Timestamp])
 
 /**
  * Mapped customers table object.
  */
-object GroceryLists extends Table[GroceryList]("lists") {
+class GroceryLists(tag: Tag) extends Table[GroceryList](tag, "lists") {
 
   def id = column[Long]("id", O.PrimaryKey, O.AutoInc)
 
-  def userId = column[String]("userId")
+  def userId = column[String]("userId", O.Length(64))
 
-  def title = column[String]("title")
+  def title = column[String]("title", O.Length(64))
 
-  def store = column[String]("store")
+  def store = column[String]("store", O.Length(64))
 
-  def details = column[String]("details")
+  def details = column[String]("details", O.Length(64))
 
-  def createDate = column[java.util.Date]("createDate", O.Nullable)
+  def createDate = column[java.sql.Timestamp]("createDate")
 
-  def * = id.? ~ userId ~ title ~ store ~ details ~ createDate.? <>(GroceryList, GroceryList.unapply _)
+  def * = (id.?, userId, title, store, details, createDate.?) <> ((GroceryList.apply _).tupled, GroceryList.unapply)
 
   //def supplier = foreignKey("SUP_FK", supID, suppliers)(_.id)
 
-  def user = foreignKey("user_FK", userId, Users)(_.fbId)
-
-  implicit val dateTypeMapper = MappedTypeMapper.base[java.util.Date, java.sql.Timestamp](
-  {
-    ud => new java.sql.Timestamp(ud.getTime)
-  }, {
-    ts => new java.util.Date(ts.getTime)
-  })
-
-  val findById = for {
-    id <- Parameters[Long]
-    c <- this if c.id is id
-  } yield c
-
-  val findByUserId = for {
-    fbId <- Parameters[String]
-    c <- this if c.userId is fbId
-  } yield c
+  def user = foreignKey("user_FK", userId, TableQuery[Users])(_.fbId, onUpdate=ForeignKeyAction.Restrict, onDelete=ForeignKeyAction.Cascade)
 }

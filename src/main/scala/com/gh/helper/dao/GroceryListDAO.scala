@@ -4,9 +4,13 @@ import com.gh.helper.config.Configuration
 import com.gh.helper.domain._
 import java.sql._
 import java.util.Date
+import java.sql.Timestamp
 import scala.Some
-import scala.slick.driver.MySQLDriver.simple.Database.threadLocalSession
-import scala.slick.driver.MySQLDriver.simple._
+import slick.jdbc.JdbcBackend.Database
+import scala.concurrent.ExecutionContext.Implicits.global
+import scala.concurrent._
+import scala.concurrent.duration._
+import slick.driver.MySQLDriver.api._
 import slick.jdbc.meta.MTable
 
 /**
@@ -18,14 +22,19 @@ class GroceryListDAO extends Configuration {
   private val db = Database.forURL(url = "jdbc:mysql://%s:%d/%s".format(dbHost, dbPort, dbName),
     user = dbUser, password = dbPassword, driver = "com.mysql.jdbc.Driver")
 
-  // create tables if not exist
-  db.withSession {
-    if (MTable.getTables("lists").list().isEmpty) {
-      GroceryLists.ddl.create
-    }
-  }
+  private val groceryLists = TableQuery[GroceryLists]
+
+   // create tables if not exist
+  Await.result(db.run(DBIO.seq(
+    MTable.getTables map (tables => {
+      if (!tables.exists(_.name.name == groceryLists.baseTableRow.tableName))
+        Await.result(db.run(groceryLists.schema.create), Duration.Inf)
+    })
+  )), Duration.Inf)
 
   private val itemService = new ItemDAO
+  
+  val insertQuery = groceryLists returning groceryLists.map(_.id) into ((list, id) => list.copy(id = Some(id)))
 
   /**
    * Saves groceryList entity into database.
@@ -35,10 +44,9 @@ class GroceryListDAO extends Configuration {
    */
   def create(list: GroceryList): Either[Failure, GroceryList] = {
     try {
-      val id = db.withSession {
-        GroceryLists returning GroceryLists.id insert list.copy(createDate = Some(new Date))
-      }
-      Right(list.copy(id = Some(id), createDate = Some(new Date)))
+      val action = insertQuery += list.copy(createDate = Some(new Timestamp((new Date).getTime)))
+      val res = Await.result(db.run(action),Duration.Inf)
+      Right(res)      
     } catch {
       case e: SQLException =>
         Left(databaseError(e))
@@ -53,13 +61,14 @@ class GroceryListDAO extends Configuration {
    * @return updated grocerList entity
    */
   def update(id: Long, list: GroceryList): Either[Failure, GroceryList] = {
-    try
-      db.withSession {
-        GroceryLists.where(_.id === id) update list.copy(id = Some(id)) match {
-          case 0 => Left(notFoundError(id))
-          case _ => Right(list.copy(id = Some(id)))
-        }
+    try {
+      val action = groceryLists.filter(_.id === id) update list.copy(id = Some(id))
+      val res = Await.result(db.run(action), Duration.Inf)
+      res match {
+        case 0 => Left(notFoundError(id))
+        case _ => Right(list.copy(id = Some(id)))
       }
+    }
     catch {
       case e: SQLException =>
         Left(databaseError(e))
@@ -72,35 +81,11 @@ class GroceryListDAO extends Configuration {
    * @param id id of the customer to delete
    * @return deleted customer entity
    */
-  def delete(id: Long): Either[Failure, GroceryList] = {
+  def delete(id: Long): Either[Failure, Int] = {
     try {
-      db.withTransaction {
-        val query = GroceryLists.where(_.id === id)
-        val lists = query.run.asInstanceOf[List[GroceryList]]
-        lists.size match {
-          case 0 =>
-            Left(notFoundError(id))
-          case _ => {
-            query.delete
-            Right(lists.head)
-          }
-        }
-      }
-    } catch {
-      case e: SQLException =>
-        Left(databaseError(e))
-    }
-  }
-
-  def getAll(): Either[Failure, List[GroceryList]] = {
-    try {
-      db.withSession {
-        val query = for {
-          groceryList <- GroceryLists 
-        } yield groceryList
-        val sortedData = query.run.toList.sortBy(- _.createDate.get.getTime)
-        Right(sortedData)
-      }
+      val action = groceryLists.filter(_.id === id).delete
+      val res = Await.result(db.run(action), Duration.Inf)
+      Right(res)
     } catch {
       case e: SQLException =>
         Left(databaseError(e))
@@ -115,20 +100,20 @@ class GroceryListDAO extends Configuration {
    */
   def get(id: Long): Either[Failure, (GroceryList, List[Item])] = {
     try {
-      db.withSession {
-        GroceryLists.findById(id).firstOption match {
-          case Some(groceryList: GroceryList) =>
-            // Right(groceryList)
-            val items = itemService.getListItems(id)
-            items match {
-              case Right(itemses: List[Item]) =>
-                Right((groceryList, itemses))
-              case _ =>
-                Right((groceryList, null))
-            }
-          case _ =>
-            Left(notFoundError(id))
-        }
+      var action = groceryLists.filter { _.id === id }.result
+      var list = Await.result(db.run(action), Duration.Inf).head
+      list match {
+        case groceryList: GroceryList =>
+          // Right(groceryList)
+          val items = itemService.getListItems(id)
+          items match {
+            case Right(itemses: List[Item]) =>
+              Right((groceryList, itemses))
+            case _ =>
+              Right((groceryList, null))
+          }
+        case _ =>
+          Left(notFoundError(id))
       }
     } catch {
       case e: SQLException =>
@@ -144,20 +129,14 @@ class GroceryListDAO extends Configuration {
    */
   def getUserLists(userId: String): Either[Failure, List[GroceryList]] = {
     try {
-      db.withSession {
-        // val query = GroceryLists.filter(_.userId === userId)
-        val query = for {
-          groceryList <- GroceryLists if {
-            groceryList.userId === userId
-          }
-        } yield groceryList
-        val lists: List[GroceryList] = query.run.toList.sortBy(_.createDate)
-        lists.size match {
-          case 0 => 
-            Left(noListForUser(userId))
-          case _ => {
-            Right(lists)
-          }
+      // val query = groceryLists.filter(_.userId === userId)
+      val query = groceryLists.filter { _.userId === userId }.result
+      val lists = Await.result(db.run(query), Duration.Inf).toList
+      lists.size match {
+        case 0 => 
+          Left(noListForUser(userId))
+        case _ => {
+          Right(lists)
         }
       }
     } catch {
@@ -174,25 +153,28 @@ class GroceryListDAO extends Configuration {
    * @return list of customers that match given parameters
    */
   def search(params: GroceryListSearchParameters): Either[Failure, List[GroceryList]] = {
-    implicit val typeMapper = GroceryLists.dateTypeMapper
+    implicit val dateTypeMapper = MappedColumnType.base[java.util.Date, java.sql.Timestamp](
+    {
+      ud => new java.sql.Timestamp(ud.getTime)
+    }, {
+      ts => new java.util.Date(ts.getTime)
+    })
 
     try {
-      db.withSession {
-        val query = for {
-          groceryList <- GroceryLists if {
-            Seq(
-              params.title.map(groceryList.title is _),
-              params.store.map(groceryList.store is _),
-              params.details.map(groceryList.details is _)
-            ).flatten match {
-              case Nil => ConstColumn.TRUE
-              case seq => seq.reduce(_ && _)
-            }
+      val query = for {
+        groceryList <- groceryLists if {
+          Seq(
+            params.title.map(groceryList.title === _),
+            params.store.map(groceryList.store === _),
+            params.details.map(groceryList.details === _)
+          ).flatten match {
+            // case Nil => Nil
+            case seq => seq.reduce(_ && _)
           }
-        } yield groceryList
-
-        Right(query.run.toList)
-      }
+        }
+      } yield groceryList
+      val res = Await.result(db.run(query.result), Duration.Inf).toList
+      Right(res)
     } catch {
       case e: SQLException =>
         Left(databaseError(e))
