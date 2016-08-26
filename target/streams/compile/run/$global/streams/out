@@ -29,4 +29,6 @@
 [0m[[0mdebug[0m] [0m	/Users/ryansaeta/.ivy2/cache/ch.qos.logback/logback-core/jars/logback-core-1.0.13.jar[0m
 [0m[[0mdebug[0m] [0mWaiting for thread run-main-0 to terminate.[0m
 [0m[[0mdebug[0m] [0m	Thread run-main-0 exited.[0m
-[0m[[0mdebug[0m] [0mWaiting for thread rest-service-example-akka.actor.default-dispatcher-2 to terminate.[0m
+[0m[[0mdebug[0m] [0mWaiting for thread rest-service-example-akka.actor.default-dispatcher-3 to terminate.[0m
+[0m[[0mdebug[0m] [0m	Thread rest-service-example-akka.actor.default-dispatcher-3 exited.[0m
+[0m[[0mdebug[0m] [0mWaiting for thread rest-service-example-scheduler-1 to terminate.[0m

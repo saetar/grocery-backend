@@ -129,6 +129,16 @@ trait RestService extends HttpService with SLF4JLogging {
             }
           }
       } ~
+      path("grocerylist" / LongNumber / "items") {
+        groceryListId =>
+          get {
+            ctx: RequestContext =>
+              handleRequest(ctx) {
+                log.debug("Getting items for grocerylist: %s" format groceryListId)
+                itemService.getListItems(groceryListId)
+              }
+          }
+      } ~
       path("user") {
         post {
           entity(Unmarshaller(MediaTypes.`application/json`) {

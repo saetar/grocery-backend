@@ -33,7 +33,7 @@ class ItemDAO extends Configuration {
         }
       })
     )), Duration.Inf)
-  } finally db.close
+  }
 
   val insertQuery = items returning items.map(_.id) into ((item, id) => item.copy(id = Some(id)))
 
@@ -122,18 +122,18 @@ class ItemDAO extends Configuration {
   /**
    * Retrieves list of grocerylists from a particular user id in the database
    *
-   * @param  userId
-   * @return list of grocerylists that match given userId
+   * @param  listId
+   * @return list of items that match given listId
    */
   def getListItems(listId: Long): Either[Failure, Seq[Item]] = {
     try {
-      // System.out.println("Finding items with listID")
       val query = items.filter{ _.listId === listId }.result
-      Await.result(db.run(query), Duration.Inf).toList match {
-        case items: Seq[Item] => 
-          Right(items)
-        case _ => {
+      val res = Await.result(db.run(query), Duration.Inf).toList
+      res.length match {
+        case 0 => 
           Left(noitemsInList(listId))
+        case _ => {
+          Right(res)
         }
       }
     } catch {

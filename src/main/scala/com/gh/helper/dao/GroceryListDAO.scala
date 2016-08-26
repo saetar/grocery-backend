@@ -98,20 +98,13 @@ class GroceryListDAO extends Configuration {
    * @param id id of the customer to retrieve
    * @return customer entity with specified id
    */
-  def get(id: Long): Either[Failure, (GroceryList, List[Item])] = {
+  def get(id: Long): Either[Failure, GroceryList] = {
     try {
       var action = groceryLists.filter { _.id === id }.result
       var list = Await.result(db.run(action), Duration.Inf).head
       list match {
-        case groceryList: GroceryList =>
-          // Right(groceryList)
-          val items = itemService.getListItems(id)
-          items match {
-            case Right(itemses: List[Item]) =>
-              Right((groceryList, itemses))
-            case _ =>
-              Right((groceryList, null))
-          }
+        case groceryList: GroceryList => 
+          Right(groceryList)
         case _ =>
           Left(notFoundError(id))
       }
