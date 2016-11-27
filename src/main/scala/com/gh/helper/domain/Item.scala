@@ -11,7 +11,8 @@ import java.sql.Timestamp
  * @param name      name of item
  * @param price     price of item
  */
-case class Item(id: Option[Long], listId: Option[Long], name: String, price: Double, category: Option[String], createDate: Option[Timestamp])
+case class Item(id: Option[Long], listId: Option[Long], name: String, price: Double,
+  category: Option[String], isDeleted: Option[Boolean], createDate: Option[Timestamp])
 
 /**
  * Mapped customers table object.
@@ -28,9 +29,11 @@ class Items(tag: Tag) extends Table[Item](tag, "items") {
 
   def category = column[String]("category", O.Length(64)) 
 
+  def isDeleted = column[Boolean]("isDeleted", O.Default(false))
+
   def createDate = column[Timestamp]("createDate")
 
-  def * = (id.?, listId.?, name, price, category.?, createDate.?) <> (Item.tupled, Item.unapply _)
+  def * = (id.?, listId.?, name, price, category.?, isDeleted.?, createDate.?) <> (Item.tupled, Item.unapply _)
 
   // def list = foreignKey("List_FK", listId, GroceryLists)(_.id)
 

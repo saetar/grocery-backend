@@ -173,7 +173,7 @@ trait RestService extends HttpService with SLF4JLogging {
                 groceryListService.getUserLists(fbId.toString)
               }
           }
-      } 
+      }
 }
 
   /**

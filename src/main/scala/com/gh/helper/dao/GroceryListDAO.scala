@@ -33,7 +33,7 @@ class GroceryListDAO extends Configuration {
   )), Duration.Inf)
 
   private val itemService = new ItemDAO
-  
+
   val insertQuery = groceryLists returning groceryLists.map(_.id) into ((list, id) => list.copy(id = Some(id)))
 
   /**
@@ -44,9 +44,10 @@ class GroceryListDAO extends Configuration {
    */
   def create(list: GroceryList): Either[Failure, GroceryList] = {
     try {
-      val action = insertQuery += list.copy(createDate = Some(new Timestamp((new Date).getTime)))
+      val action = insertQuery += list.copy(isDeleted = Some(false), 
+        createDate = Some(new Timestamp((new Date).getTime)))
       val res = Await.result(db.run(action),Duration.Inf)
-      Right(res)      
+      Right(res)
     } catch {
       case e: SQLException =>
         Left(databaseError(e))
@@ -83,9 +84,11 @@ class GroceryListDAO extends Configuration {
    */
   def delete(id: Long): Either[Failure, Int] = {
     try {
-      val action = groceryLists.filter(_.id === id).delete
-      val res = Await.result(db.run(action), Duration.Inf)
-      Right(res)
+      val action = groceryLists.filter(_.id === id).result
+      val res = Await.result(db.run(action), Duration.Inf).head
+      val del = groceryLists.filter(_.id === id) update res.copy(isDeleted = Some(true))
+      val res2 = Await.result(db.run(del), Duration.Inf)
+      Right(res2)
     } catch {
       case e: SQLException =>
         Left(databaseError(e))
@@ -103,7 +106,7 @@ class GroceryListDAO extends Configuration {
       var action = groceryLists.filter { _.id === id }.result
       var list = Await.result(db.run(action), Duration.Inf).head
       list match {
-        case groceryList: GroceryList => 
+        case groceryList: GroceryList =>
           Right(groceryList)
         case _ =>
           Left(notFoundError(id))
@@ -113,7 +116,7 @@ class GroceryListDAO extends Configuration {
         Left(databaseError(e))
     }
   }
-  
+
   /**
    * Retrieves list of grocerylists from a particular user id in the database
    *
@@ -123,10 +126,10 @@ class GroceryListDAO extends Configuration {
   def getUserLists(userId: String): Either[Failure, List[GroceryList]] = {
     try {
       // val query = groceryLists.filter(_.userId === userId)
-      val query = groceryLists.filter { _.userId === userId }.result
+      val query = groceryLists.filter(_.userId === userId).filter(!_.isDeleted).result
       val lists = Await.result(db.run(query), Duration.Inf).toList
       lists.size match {
-        case 0 => 
+        case 0 =>
           Left(noListForUser(userId))
         case _ => {
           Right(lists)
@@ -190,13 +193,10 @@ class GroceryListDAO extends Configuration {
    * @return not found error description
    */
   protected def notFoundError(customerId: Long) =
-    Failure("Customer with id=%d does not exist".format(customerId), FailureType.NotFound)
+    Failure(s"Customer with id=$customerId does not exist", FailureType.NotFound)
 
 
-  protected def noListForUser(userId: String) = 
-    Failure("User with id=%d does not exist".format(userId), FailureType.NotFound)
-
-
-
+  protected def noListForUser(userId: String) =
+    Failure(s"User with id=$userId does not exist", FailureType.NotFound)
 
 }

@@ -2,7 +2,6 @@ package com.gh.helper.domain
 
 // import slick.driver.MySQLDriver.simple._
 import slick.model.ForeignKeyAction
-
 import slick.driver.MySQLDriver.api._
 import scala.concurrent.ExecutionContext.Implicits.global
 import java.sql.Timestamp
@@ -15,7 +14,8 @@ import java.sql.Timestamp
  * @param store     store
  * @param details   details
  */
-case class GroceryList(id: Option[Long], userId: String, title: String, store: String, details: String, createDate: Option[Timestamp])
+case class GroceryList(id: Option[Long], userId: String, title: String, store: String, 
+	details: String, isDeleted: Option[Boolean], createDate: Option[Timestamp])
 
 /**
  * Mapped customers table object.
@@ -32,11 +32,11 @@ class GroceryLists(tag: Tag) extends Table[GroceryList](tag, "lists") {
 
   def details = column[String]("details", O.Length(64))
 
+  def isDeleted = column[Boolean]("isDeleted", O.Default(false))
+
   def createDate = column[java.sql.Timestamp]("createDate")
 
-  def * = (id.?, userId, title, store, details, createDate.?) <> ((GroceryList.apply _).tupled, GroceryList.unapply)
+  def * = (id.?, userId, title, store, details, isDeleted.?, createDate.?) <> ((GroceryList.apply _).tupled, GroceryList.unapply)
 
-  //def supplier = foreignKey("SUP_FK", supID, suppliers)(_.id)
-
-  def user = foreignKey("user_FK", userId, TableQuery[Users])(_.fbId, onUpdate=ForeignKeyAction.Restrict, onDelete=ForeignKeyAction.Cascade)
+  def user = foreignKey("user_FK", userId, TableQuery[Users])(_.fbId, onUpdate=ForeignKeyAction.Restrict)
 }
