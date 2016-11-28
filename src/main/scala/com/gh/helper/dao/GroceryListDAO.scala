@@ -22,13 +22,17 @@ class GroceryListDAO extends Configuration {
   private val db = Database.forURL(url = "jdbc:mysql://%s:%d/%s".format(dbHost, dbPort, dbName),
     user = dbUser, password = dbPassword, driver = "com.mysql.jdbc.Driver")
 
+  private val userLists = TableQuery[PersonLists]
   private val groceryLists = TableQuery[GroceryLists]
+  private val users = TableQuery[Users]
 
    // create tables if not exist
   Await.result(db.run(DBIO.seq(
     MTable.getTables map (tables => {
       if (!tables.exists(_.name.name == groceryLists.baseTableRow.tableName))
         Await.result(db.run(groceryLists.schema.create), Duration.Inf)
+      if (!tables.exists(_.name.name == userLists.baseTableRow.tableName))
+        Await.result(db.run(userLists.schema.create), Duration.Inf)
     })
   )), Duration.Inf)
 
@@ -126,8 +130,11 @@ class GroceryListDAO extends Configuration {
   def getUserLists(userId: String): Either[Failure, List[GroceryList]] = {
     try {
       // val query = groceryLists.filter(_.userId === userId)
-      val query = groceryLists.filter(_.userId === userId).filter(!_.isDeleted).result
-      val lists = Await.result(db.run(query), Duration.Inf).toList
+      val query = (for {
+        (ul, l) <- userLists.filter(_.userId === userId) join groceryLists on (_.listId === _.id)
+      } yield l).filter(!_.isDeleted)
+
+      val lists: List[GroceryList] = Await.result(db.run(query.result), Duration.Inf).toList
       lists.size match {
         case 0 =>
           Left(noListForUser(userId))
