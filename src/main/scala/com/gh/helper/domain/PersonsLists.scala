@@ -7,9 +7,11 @@ import scala.concurrent.ExecutionContext.Implicits.global
 import java.sql.Timestamp
 
 
-case class PersonList(userId: String, listId: Long, isOwner: Boolean)
+case class PersonList(id: Option[Long], userId: String, listId: Long, isOwner: Boolean)
 
 class PersonLists(tag: Tag) extends Table[PersonList](tag, "userlist") {
+
+  def id = column[Long]("id", O.PrimaryKey, O.AutoInc)
 
   def userId = column[String]("userId", O.Length(64))
 
@@ -17,11 +19,11 @@ class PersonLists(tag: Tag) extends Table[PersonList](tag, "userlist") {
 
   def isOwner = column[Boolean]("isOwner")
 
-  def * = (userId, listId, isOwner) <> ((PersonList.apply _).tupled, PersonList.unapply)
+  def * = (id.?, userId, listId, isOwner) <> ((PersonList.apply _).tupled, PersonList.unapply)
 
-  def user = foreignKey("user_FK", userId, TableQuery[Users])(_.fbId)
+  def user = foreignKey("useruserlist_FK", userId, TableQuery[Users])(_.fbId)
 
-  def list = foreignKey("list_FK", listId, TableQuery[GroceryLists])(_.id)
+  def list = foreignKey("listuserlist_FK", listId, TableQuery[GroceryLists])(_.id)
 
   def uniqueConst = index("unique_idx", (userId, listId), unique = true)
 

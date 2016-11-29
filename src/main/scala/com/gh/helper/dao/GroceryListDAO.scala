@@ -38,7 +38,8 @@ class GroceryListDAO extends Configuration {
 
   private val itemService = new ItemDAO
 
-  val insertQuery = groceryLists returning groceryLists.map(_.id) into ((list, id) => list.copy(id = Some(id)))
+  val insertListQuery = groceryLists returning groceryLists.map(_.id) into ((list, id) => list.copy(id = Some(id)))
+  val insertUserListQuery = userLists returning userLists.map(_.id) into ((userlist, id) => userlist.copy(id = Some(id)))
 
   /**
    * Saves groceryList entity into database.
@@ -48,9 +49,11 @@ class GroceryListDAO extends Configuration {
    */
   def create(list: GroceryList): Either[Failure, GroceryList] = {
     try {
-      val action = insertQuery += list.copy(isDeleted = Some(false), 
+      val action = insertListQuery += list.copy(isDeleted = Some(false), 
         createDate = Some(new Timestamp((new Date).getTime)))
-      val res = Await.result(db.run(action),Duration.Inf)
+      val res = Await.result(db.run(action), Duration.Inf)
+      val action2 = insertUserListQuery += PersonList(null, res.userId, res.id.getOrElse(-1), true)
+      val res2 = Await.result(db.run(action2), Duration.Inf)
       Right(res)
     } catch {
       case e: SQLException =>
