@@ -127,6 +127,16 @@ trait RestService extends HttpService with SLF4JLogging {
                     itemService.create(groceryListId, item)
                   }
             }
+          }        
+      } ~
+      path("grocerylist" / LongNumber / PathElement) {
+        (groceryListId, userId) => 
+          put {
+            ctx: RequestContext =>
+              handleRequest(ctx) {
+                log.debug(s"Adding user $userId to list $groceryListId")
+                groceryListService.addToListUser(groceryListId, userId)
+              }
           }
       } ~
       path("grocerylist" / LongNumber / "items") {
@@ -171,6 +181,16 @@ trait RestService extends HttpService with SLF4JLogging {
               handleRequest(ctx) {
                 log.debug("Getting user with fbId: %s" format fbId)
                 groceryListService.getUserLists(fbId.toString)
+              }
+          }
+      } ~ 
+      path("items" / LongNumber) {
+        itemId => 
+          delete {
+            ctx: RequestContext =>
+              handleRequest(ctx) {
+                log.debug(s"Deleting item with id $itemId")
+                itemService.delete(itemId)
               }
           }
       }

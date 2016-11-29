@@ -62,6 +62,24 @@ class GroceryListDAO extends Configuration {
   }
 
   /**
+      Adds a user to a list and makes them not the owner.
+
+      @param listId list to add user to
+      @param userId user to add to list
+      @return row in joining table
+  */
+  def addToListUser(listId: Long, userId: String): Either[Failure, PersonList] = {
+    try {
+      val action = insertUserListQuery += PersonList(null, userId, listId, false)
+      val res = Await.result(db.run(action), Duration.Inf)
+      Right(res)
+    } catch {
+      case e: SQLException =>
+        Left(databaseError(e))
+    }
+  }
+
+  /**
    * Updates groceryList entity with specified one.
    *
    * @param id       id of the grocerList to update.
@@ -89,13 +107,11 @@ class GroceryListDAO extends Configuration {
    * @param id id of the customer to delete
    * @return deleted customer entity
    */
-  def delete(id: Long): Either[Failure, Int] = {
+  def delete(id: Long): Either[Failure, GroceryList] = {
     try {
       val action = groceryLists.filter(_.id === id).result
       val res = Await.result(db.run(action), Duration.Inf).head
-      val del = groceryLists.filter(_.id === id) update res.copy(isDeleted = Some(true))
-      val res2 = Await.result(db.run(del), Duration.Inf)
-      Right(res2)
+      update(id, res.copy(isDeleted = Some(true)))
     } catch {
       case e: SQLException =>
         Left(databaseError(e))

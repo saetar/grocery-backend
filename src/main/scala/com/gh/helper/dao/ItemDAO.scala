@@ -45,7 +45,8 @@ class ItemDAO extends Configuration {
    */
   def create(groceryListId: Long, item: Item): Either[Failure, Item] = {
     try {
-      val action = insertQuery += item.copy(createDate = Some(new Timestamp((new Date).getTime)))
+      val action = insertQuery += item.copy(isDeleted = Some(false),
+        createDate = Some(new Timestamp((new Date).getTime)))
       val res = Await.result(db.run(action),Duration.Inf)
       Right(res)      
     } catch {
@@ -81,17 +82,11 @@ class ItemDAO extends Configuration {
    * @param id id of the customer to delete
    * @return deleted customer entity
    */
-  def delete(id: Long): Either[Failure, Long] = {
+  def delete(id: Long): Either[Failure, Item] = {
     try {
-      val query = items.filter(_.id === id).delete
-      val res = Await.result(db.run(query), Duration.Inf)
-      res match {
-        case 0 =>
-          Left(notFoundError(id))
-        case _ => {
-          Right(id)
-        }
-      }
+      val query = items.filter(_.id === id).result
+      val res = Await.result(db.run(query), Duration.Inf).head      
+      update(id, res.copy(isDeleted = Some(true)))        
     } catch {
       case e: SQLException =>
         Left(databaseError(e))
@@ -127,7 +122,7 @@ class ItemDAO extends Configuration {
    */
   def getListItems(listId: Long): Either[Failure, Seq[Item]] = {
     try {
-      val query = items.filter{ _.listId === listId }.result
+      val query = items.filter(_.listId === listId).filter(!_.isDeleted).result
       val res = Await.result(db.run(query), Duration.Inf).toList
       res.length match {
         case 0 => 
