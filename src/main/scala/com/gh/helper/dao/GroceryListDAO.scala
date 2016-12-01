@@ -151,7 +151,7 @@ class GroceryListDAO extends Configuration {
       // val query = groceryLists.filter(_.userId === userId)
       val query = (for {
         (ul, l) <- userLists.filter(_.userId === userId) join groceryLists on (_.listId === _.id)
-      } yield l).filter(!_.isDeleted)
+      } yield l).filter(!_.isDeleted).sortBy(_.createDate.desc)
 
       val lists: List[GroceryList] = Await.result(db.run(query.result), Duration.Inf).toList
       lists.size match {
