@@ -12,7 +12,7 @@ import scala.concurrent.ExecutionContext.Implicits.global
  * @param fbToken   facebook access token
  */
 case class User(fbId: String, email: String, firstName: String, lastName: String, 
-  curFBToken: String, curToken: Option[java.util.UUID], createDate: Option[java.sql.Timestamp])
+  curFBToken: String, createDate: Option[java.sql.Timestamp])
 
 /**
  * Mapped customers table object.
@@ -27,13 +27,11 @@ class Users(tag: Tag) extends Table[User](tag, "users") {
 
   def lastName = column[String]("lastName", O.Length(64))
 
-  def curFBToken = column[String]("curFBToken", O.Length(300))
-
-  def curUUID = column[java.util.UUID]("curUUID", O.Length(128))
+  def curFBToken = column[String]("curToken", O.Length(300))
 
   def createDate = column[java.sql.Timestamp]("createDate")
 
-  def * = (fbId, email, firstName, lastName, curFBToken, curUUID.?, createDate.?) <>(User.tupled, User.unapply)
+  def * = (fbId, email, firstName, lastName, curFBToken, createDate.?) <>(User.tupled, User.unapply)
 
   def uniqueFbid = index("unique_fbId", fbId, unique = true)
 

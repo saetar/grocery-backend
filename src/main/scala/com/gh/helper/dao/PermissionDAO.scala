@@ -125,7 +125,10 @@ class PermissionDAO extends Configuration {
     else {
       val userId = authorization.split(":")(0)
       getUserPermissions(userId) match {
-        case seq: Seq[String] => seq.contains(pt.toString)
+        case Right(seq: Seq[String]) => {
+          println(s"LOOK: ${pt.toString} HERE DUMBASS: $seq")
+          seq.contains(pt.toString)
+        }
         case _ => false
       }
     }
@@ -133,7 +136,9 @@ class PermissionDAO extends Configuration {
 
   def create(security: Security): Either[Failure, Security] = {
     try {
-      var query = securities += security
+      val userSecurity = Await.result(db.run(securities.filter(_.userId === security.userId).result), Duration.Inf).toList
+      var query = if (userSecurity.length > 0) securities.filter { _.userId === security.userId } update security 
+                      else securities += security
       Await.result(db.run(query), Duration.Inf) match {
         case 0 => {
           Left(userCredentialsInvalid("Error: could not insert user"))
@@ -152,7 +157,7 @@ class PermissionDAO extends Configuration {
 
   def makeUserSecurity(userId: String, fbToken: String): Either[Failure,Security] = {
     val curToken = s"$userId:$fbToken"
-    val security = Security(null, userId, fbToken, curToken, null)
+    val security = Security(userId, fbToken, curToken, null)
     create(security)
   }
 
