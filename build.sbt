@@ -15,7 +15,9 @@ libraryDependencies ++= Seq(
     "mysql" % "mysql-connector-java" % "5.1.25",
     "com.typesafe.akka" %% "akka-actor" % "2.1.4",
     "com.typesafe.akka" %% "akka-slf4j" % "2.1.4",
-    "ch.qos.logback" % "logback-classic" % "1.0.13"
+    "ch.qos.logback" % "logback-classic" % "1.0.13",
+    "org.scalaj" % "scalaj-http_2.11" % "2.3.0",
+    "com.fasterxml.jackson.core" % "jackson-databind" % "2.4.0"
 )
 
 resolvers ++= Seq(

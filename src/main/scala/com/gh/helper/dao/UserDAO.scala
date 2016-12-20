@@ -20,7 +20,7 @@ class UserDAO extends Configuration {
     user = dbUser, password = dbPassword, driver = "com.mysql.jdbc.Driver")
 
   private val users = TableQuery[Users]
-
+  // private val facebookService = new FacebookDAO
   // create tables if not exist
   Await.result(db.run(DBIO.seq(
   MTable.getTables map (tables => {
@@ -37,7 +37,7 @@ class UserDAO extends Configuration {
    */
   def create(user: User): Either[Failure, User] = {
     try {
-      val query = users += user
+      var query = users += user
       Await.result(db.run(query), Duration.Inf) match {
         case 0 => {
           Left(databaseError("Error: could not insert user"))
@@ -75,6 +75,32 @@ class UserDAO extends Configuration {
         Left(databaseError(e))
       }
     }
+  }
+
+  def login(fbId: String, fbToken: String): Either[Failure, User] = {
+    get(fbId)
+    // try {
+    //   facebookService.authorizeUser(fbToken) match {
+    //     case Some(m: Map[String, Any]) => {
+    //       if (m.get("id") == fbId) {
+    //         get(fbId) match {
+    //           case Right(x) => update(fbId, x.copy(curFBToken = fbToken))
+    //           case Left(x) => Left(userCredentialsExpired(fbId))
+    //         }
+    //       }
+    //       else {
+    //         Left(userCredentialsExpired(fbId))
+    //       }
+    //     }
+    //     case _ => Left(userCredentialsExpired(fbId))
+    //   }
+    // }
+    // catch {
+    //   case e: SQLException => {
+    //     System.out.println(e)
+    //     Left(databaseError(e))
+    //   }
+    // }
   }
 
   /**
@@ -121,6 +147,15 @@ class UserDAO extends Configuration {
   }
 
   /**
+   * creates access token using timestamp of lastupdate, email and fbtoken
+   */
+  def makeToken(user: User): (java.util.UUID, String) = {
+    var uuid = java.util.UUID.randomUUID
+    (uuid, s"${user.createDate}:${user.curFBToken}:${user.email}:${uuid}")
+  }
+
+
+  /**
    * Produce database error description.
    *
    * @param e SQL Exception
@@ -143,4 +178,7 @@ class UserDAO extends Configuration {
 
   protected def databaseError(message: String) = 
     Failure("%s could not be inserted".format(message), FailureType.DatabaseFailure)
+
+  protected def userCredentialsExpired(fbId: String) =
+    Failure(s"User with fbId $fbId has tried to log in with expired credentials", FailureType.NotFound)
 }
