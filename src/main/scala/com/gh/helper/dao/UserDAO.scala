@@ -20,14 +20,17 @@ class UserDAO extends Configuration {
     user = dbUser, password = dbPassword, driver = "com.mysql.jdbc.Driver")
 
   private val users = TableQuery[Users]
+  private val friends = TableQuery[Friends]
   // private val facebookService = new FacebookDAO
   // create tables if not exist
   Await.result(db.run(DBIO.seq(
-  MTable.getTables map (tables => {
-    if (!tables.exists(_.name.name == users.baseTableRow.tableName))
-      Await.result(db.run(users.schema.create), Duration.Inf)
-    })
-  )), Duration.Inf)
+    MTable.getTables map (tables => {
+      if (!tables.exists(_.name.name == users.baseTableRow.tableName))
+        Await.result(db.run(users.schema.create), Duration.Inf)
+      if (!tables.exists(_.name.name == friends.baseTableRow.tableName))
+        Await.result(db.run(friends.schema.create), Duration.Inf)
+      })
+    )), Duration.Inf)
 
   /**
    * Saves customer entity into database.
@@ -152,6 +155,27 @@ class UserDAO extends Configuration {
   def makeToken(user: User): (java.util.UUID, String) = {
     var uuid = java.util.UUID.randomUUID
     (uuid, s"${user.createDate}:${user.curFBToken}:${user.email}:${uuid}")
+  }
+
+  def getFriends(userId: String): Either[Failure, Seq[User]] = {
+    val sideOne = (for {
+        (f, u) <- friends.filter(_.userId === userId) join users on (_.otherUserId === _.fbId)
+      } yield u)
+    val sideTwo = (for {
+        (f, u) <- friends.filter(_.userId === userId) join users on (_.userId === _.fbId)
+      } yield u)
+    val union = sideOne union sideTwo
+    try {
+      Await.result(db.run(union.result), Duration.Inf).toList match {
+        case users: Seq[User] => 
+          Right(users)
+        case _ => 
+          Left(notFoundError(userId))
+      }
+    } catch {
+      case e: SQLException =>
+        Left(databaseError(e))
+    }
   }
 
 

@@ -204,6 +204,16 @@ trait RestService extends HttpService with SLF4JLogging {
             }
         }
     } ~ 
+    path("user" / PathElement / "friends") {
+      fbId => 
+        get {
+          ctx: RequestContext =>
+            handleRequest(ctx) {
+              log.debug(s"Getting friends for user with id $fbId")
+              userService.getFriends(fbId)
+            }
+        }
+    } ~
     path("items" / LongNumber) {
       itemId => 
         delete {

@@ -38,6 +38,29 @@ class Users(tag: Tag) extends Table[User](tag, "users") {
   def uniqueEmail = index("unique_email", email, unique = true)
 }
 
+
+case class Friend(id: Option[Long], userId: String, otherUserId: String, isRemoved: Boolean = false)
+
+class Friends(tag: Tag) extends Table[Friend](tag, "friends") {
+
+  def id = column[Long]("id", O.PrimaryKey, O.AutoInc)
+
+  def userId = column[String]("userId", O.Length(64))
+
+  def otherUserId = column[String]("otherUserId", O.Length(64))
+
+  def isRemoved = column[Boolean]("isRemoved")
+
+  def * = (id.?, userId, otherUserId, isRemoved) <>(Friend.tupled, Friend.unapply)
+
+  def user = foreignKey("user_friend1_FK", userId, UserT.users)(_.fbId, onUpdate=ForeignKeyAction.Restrict)
+
+  def user2 = foreignKey("user_friend2_FK", otherUserId, UserT.users)(_.fbId, onUpdate=ForeignKeyAction.Restrict)
+
+  def uniqueFriends = index("unique_friends", (userId, otherUserId), unique = true)
+
+}
+
 object UserT {
   val users = TableQuery[Users]
 }
